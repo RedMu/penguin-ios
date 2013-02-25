@@ -24,6 +24,7 @@
 		606B2E6316DC148200B75A63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E6116DC148200B75A63 /* InfoPlist.strings */; };
 		606B2E6616DC148200B75A63 /* iPenguinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E6516DC148200B75A63 /* iPenguinTests.m */; };
 		606B2E7116DC169A00B75A63 /* QueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7016DC169A00B75A63 /* QueueViewController.m */; };
+		606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7316DC259200B75A63 /* StoryViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,8 @@
 		606B2E6516DC148200B75A63 /* iPenguinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPenguinTests.m; sourceTree = "<group>"; };
 		606B2E6F16DC169A00B75A63 /* QueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueViewController.h; sourceTree = "<group>"; };
 		606B2E7016DC169A00B75A63 /* QueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueViewController.m; sourceTree = "<group>"; };
+		606B2E7216DC259200B75A63 /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
+		606B2E7316DC259200B75A63 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,8 @@
 				606B2E3816DC148200B75A63 /* Supporting Files */,
 				606B2E6F16DC169A00B75A63 /* QueueViewController.h */,
 				606B2E7016DC169A00B75A63 /* QueueViewController.m */,
+				606B2E7216DC259200B75A63 /* StoryViewController.h */,
+				606B2E7316DC259200B75A63 /* StoryViewController.m */,
 			);
 			path = iPenguin;
 			sourceTree = "<group>";
@@ -277,6 +282,7 @@
 				606B2E3E16DC148200B75A63 /* main.m in Sources */,
 				606B2E4216DC148200B75A63 /* AppDelegate.m in Sources */,
 				606B2E7116DC169A00B75A63 /* QueueViewController.m in Sources */,
+				606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

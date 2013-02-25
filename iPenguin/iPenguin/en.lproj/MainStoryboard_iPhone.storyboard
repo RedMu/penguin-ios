@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
-        <!--Queue View Controller - Penguin Queues-->
+        <!--Queue View Controller - Queues-->
         <scene sceneID="sbf-mC-h9h">
             <objects>
                 <tableViewController id="Nd8-Au-LUT" customClass="QueueViewController" sceneMemberID="viewController">
@@ -21,6 +21,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="iiu-lI-HUi" kind="push" id="Wv9-Sb-Zud"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -28,11 +31,41 @@
                             <outlet property="delegate" destination="Nd8-Au-LUT" id="qyx-DK-aq2"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Penguin Queues" id="e31-Mb-Pb3"/>
+                    <navigationItem key="navigationItem" title="Queues" id="e31-Mb-Pb3"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tQY-po-s6p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="646" y="134"/>
+        </scene>
+        <!--Story View Controller - Stories-->
+        <scene sceneID="1If-6n-O5Z">
+            <objects>
+                <tableViewController id="iiu-lI-HUi" customClass="StoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="lV8-0w-qzR">
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryCell" id="MYy-jt-qoq">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="iiu-lI-HUi" id="cbw-99-uRs"/>
+                            <outlet property="delegate" destination="iiu-lI-HUi" id="1cM-oi-tXQ"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Stories" id="GNi-Cs-ZoA"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Yd-Gu-LIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1098" y="124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="89X-rl-toK">
