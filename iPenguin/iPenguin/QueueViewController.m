@@ -7,6 +7,7 @@
 //
 
 #import "QueueViewController.h"
+#import "StoryViewController.h"
 
 @interface QueueViewController ()
 
@@ -15,6 +16,8 @@
 @implementation QueueViewController
 
 NSArray *queues;
+
+NSString *url = @"";
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,7 +38,22 @@ NSArray *queues;
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    queues = [NSArray arrayWithObjects:@"Logistics", @"Pricing Management", nil];
+    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://virtualpenguin.herokuapp.com/api/queues"]];
+    NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+
+    NSMutableArray *tempQueues = [NSMutableArray new];
+    
+    for (NSDictionary *queue in jsonObjects) {
+        [tempQueues addObject:[queue objectForKey:@"name"]];
+    }
+    
+    queues = [[NSArray alloc] initWithArray:tempQueues];
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    
+    [segue.destinationViewController setQueue:[queues objectAtIndex:[indexPath row]]];
 }
 
 - (void)didReceiveMemoryWarning

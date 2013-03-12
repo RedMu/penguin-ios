@@ -14,6 +14,8 @@
 
 @implementation StoryViewController
 
+@synthesize queue;
+
 NSArray *stories;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -30,6 +32,27 @@ NSArray *stories;
     [super viewDidLoad];
     
     stories = [NSArray arrayWithObjects:@"S-123456", @"S-789101", @"D-192837", nil];
+    
+    
+    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://virtualpenguin.herokuapp.com/api/queues"]];
+    NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    
+    NSMutableArray *tempStories = [NSMutableArray new];
+    
+    for (NSDictionary *currentQueue in jsonObjects) {
+
+        NSString *queueName = [currentQueue objectForKey:@"name"];
+        
+        if([queueName isEqualToString:queue])
+        {
+            for(NSDictionary *story in [currentQueue objectForKey:@"stories"])
+            {
+                [tempStories addObject:[story objectForKey:@"name"]];
+            }
+        }
+    }
+    
+    stories = [[NSArray alloc] initWithArray:tempStories];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
