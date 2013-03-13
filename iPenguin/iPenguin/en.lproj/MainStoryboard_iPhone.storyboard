@@ -13,11 +13,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="QueueCell" editingAccessoryType="disclosureIndicator" id="dCh-vb-h0V">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="QueueCell" editingAccessoryType="detailDisclosureButton" id="dCh-vb-h0V">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="267" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -46,7 +46,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryCell" textLabel="Los-7y-Hzm" detailTextLabel="xhd-PP-MoF" style="IBUITableViewCellStyleSubtitle" id="MYy-jt-qoq">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryCell" editingAccessoryType="disclosureIndicator" textLabel="Los-7y-Hzm" detailTextLabel="xhd-PP-MoF" style="IBUITableViewCellStyleSubtitle" id="MYy-jt-qoq">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -128,10 +128,10 @@
             </objects>
             <point key="canvasLocation" x="140" y="-1026"/>
         </scene>
-        <!--View Controller - Config-->
+        <!--Config View Controller - Config-->
         <scene sceneID="8ad-dw-o46">
             <objects>
-                <viewController id="s6m-87-iki" sceneMemberID="viewController">
+                <viewController id="s6m-87-iki" customClass="ConfigViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e9L-zB-WiK">
                         <rect key="frame" x="0.0" y="20" width="320" height="499"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -140,7 +140,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="URL" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <outlet property="delegate" destination="e9L-zB-WiK" id="w9S-Ej-7OH"/>
+                                    <outlet property="delegate" destination="s6m-87-iki" id="YOL-zg-oYs"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Penguin Server URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opY-v3-QLv">
@@ -155,7 +155,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AoL-Hk-yb1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5px-pK-5Md"/>
-                            <constraint firstItem="AoL-Hk-yb1" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="106" id="Jxh-TA-7Az"/>
+                            <constraint firstItem="AoL-Hk-yb1" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="106" id="OgU-X5-n4O"/>
                             <constraint firstItem="AoL-Hk-yb1" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lTP-X2-Qz6"/>
                             <constraint firstItem="opY-v3-QLv" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="85" id="pmW-Xe-NHO"/>
                             <constraint firstItem="opY-v3-QLv" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="69" id="zI8-Bb-g6q"/>
@@ -191,23 +191,6 @@
         <image name="20-gear2.png" width="26" height="28"/>
         <image name="33-cabinet.png" width="20" height="26"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="QueueViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setEditMode:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="StoryDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryDetailsViewController.h"/>
-        </class>
-        <class className="StoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

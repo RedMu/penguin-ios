@@ -8,6 +8,7 @@
 
 #import "QueueViewController.h"
 #import "StoryViewController.h"
+#import "AppDelegate.h"
 
 @interface QueueViewController ()
 
@@ -38,18 +39,38 @@ NSString *url = @"";
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
-    //NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://penguin.office.blackpepper.co.uk/api/queues"]];
-    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://virtualpenguin.herokuapp.com/api/queues"]];
-    
-    NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+}
 
-    NSMutableArray *tempQueues = [NSMutableArray new];
-    
-    for (NSDictionary *queue in jsonObjects) {
-        [tempQueues addObject:[queue objectForKey:@"name"]];
+- (void) viewWillAppear:(BOOL)animated
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    if(appDelegate.url == nil)
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Config missing"
+                                                        message:@"No server was found, please select Config tab and enter server URL"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+        queues = [NSArray new];
     }
-    
-    queues = [[NSArray alloc] initWithArray:tempQueues];
+    else
+    {
+        NSString *url = [appDelegate.url stringByAppendingString:@"/api/queues"];
+        
+        NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
+        
+        NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+        
+        NSMutableArray *tempQueues = [NSMutableArray new];
+        
+        for (NSDictionary *queue in jsonObjects) {
+            [tempQueues addObject:[queue objectForKey:@"name"]];
+        }
+        
+        queues = [[NSArray alloc] initWithArray:tempQueues];
+    }
+    [self.tableView reloadData];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{

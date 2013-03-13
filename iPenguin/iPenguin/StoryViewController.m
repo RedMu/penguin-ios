@@ -8,6 +8,7 @@
 
 #import "StoryViewController.h"
 #import "StoryDetailsViewController.h"
+#import "AppDelegate.h"
 
 @interface StoryViewController ()
 
@@ -32,8 +33,11 @@ NSArray *stories;
 {
     [super viewDidLoad];
     
-    //NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://penguin.office.blackpepper.co.uk/api/queues"]];
-    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://virtualpenguin.herokuapp.com/api/queues"]];
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSString *url = [appDelegate.url stringByAppendingString:@"/api/queues"];
+    
+    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
     
     NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
