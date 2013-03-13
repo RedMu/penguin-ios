@@ -25,6 +25,7 @@
 		606B2E6616DC148200B75A63 /* iPenguinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E6516DC148200B75A63 /* iPenguinTests.m */; };
 		606B2E7116DC169A00B75A63 /* QueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7016DC169A00B75A63 /* QueueViewController.m */; };
 		606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7316DC259200B75A63 /* StoryViewController.m */; };
+		60B3132816F122F90040BD92 /* StoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B3132716F122F90040BD92 /* StoryDetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,8 @@
 		606B2E7016DC169A00B75A63 /* QueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueViewController.m; sourceTree = "<group>"; };
 		606B2E7216DC259200B75A63 /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
 		606B2E7316DC259200B75A63 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
+		60B3132616F122F90040BD92 /* StoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryDetailsViewController.h; sourceTree = "<group>"; };
+		60B3132716F122F90040BD92 /* StoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryDetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				606B2E7016DC169A00B75A63 /* QueueViewController.m */,
 				606B2E7216DC259200B75A63 /* StoryViewController.h */,
 				606B2E7316DC259200B75A63 /* StoryViewController.m */,
+				60B3132616F122F90040BD92 /* StoryDetailsViewController.h */,
+				60B3132716F122F90040BD92 /* StoryDetailsViewController.m */,
 			);
 			path = iPenguin;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				606B2E4216DC148200B75A63 /* AppDelegate.m in Sources */,
 				606B2E7116DC169A00B75A63 /* QueueViewController.m in Sources */,
 				606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */,
+				60B3132816F122F90040BD92 /* StoryDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,6 +472,7 @@
 				606B2E6B16DC148200B75A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		606B2E6C16DC148200B75A63 /* Build configuration list for PBXNativeTarget "iPenguinTests" */ = {
 			isa = XCConfigurationList;
@@ -474,6 +481,7 @@
 				606B2E6E16DC148200B75A63 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

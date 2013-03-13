@@ -1,23 +1,23 @@
 //
-//  StoryViewController.m
+//  StoryDetailsViewController.m
 //  iPenguin
 //
-//  Created by Dan Hall on 25/02/2013.
+//  Created by Dan Hall on 13/03/2013.
 //  Copyright (c) 2013 Dan Hall. All rights reserved.
 //
 
-#import "StoryViewController.h"
 #import "StoryDetailsViewController.h"
 
-@interface StoryViewController ()
+@interface StoryDetailsViewController ()
 
 @end
 
-@implementation StoryViewController
+@implementation StoryDetailsViewController
 
-@synthesize queue;
+#define CELL_CONTENT_WIDTH 300.0f
+#define CELL_CONTENT_MARGIN 15.0f
 
-NSArray *stories;
+@synthesize storyName, description, author;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,35 +31,6 @@ NSArray *stories;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    //NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://penguin.office.blackpepper.co.uk/api/queues"]];
-    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://virtualpenguin.herokuapp.com/api/queues"]];
-    
-    NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-    
-    NSMutableArray *tempStories = [NSMutableArray new];
-    
-    for (NSDictionary *currentQueue in jsonObjects) {
-
-        NSString *queueName = [currentQueue objectForKey:@"name"];
-        
-        if([queueName isEqualToString:queue])
-        {
-            for(NSDictionary *story in [currentQueue objectForKey:@"stories"])
-            {
-                NSMutableDictionary *storyDetails = [[NSMutableDictionary alloc] init];
-                
-                [storyDetails setObject:[story objectForKey:@"author"] forKey:@"author"];
-                [storyDetails setObject:[story objectForKey:@"description"] forKey:@"description"];
-                [storyDetails setObject:[story objectForKey:@"name"] forKey:@"name"];
-                [storyDetails setObject:[story objectForKey:@"_id"] forKey:@"_id"];                
-                
-                [tempStories addObject:storyDetails];
-            }
-        }
-    }
-    
-    stories = [[NSArray alloc] initWithArray:tempStories];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -74,40 +45,93 @@ NSArray *stories;
     // Dispose of any resources that can be recreated.
 }
 
--(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
-    
-    [segue.destinationViewController setStoryName:[[stories objectAtIndex:[indexPath row]] objectForKey:@"name"]];
-    [segue.destinationViewController setAuthor:[[stories objectAtIndex:[indexPath row]] objectForKey:@"author"]];
-    [segue.destinationViewController setDescription:[[stories objectAtIndex:[indexPath row]] objectForKey:@"description"]];
-}
-
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 1;
+    return 3;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return [stories count];
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"StoryCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    static NSString *CellIdentifier = @"StoryDetailCell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    // Configure the cell...
-    cell.textLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"name"];
-    cell.detailTextLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"author"];
+    cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+    cell.textLabel.numberOfLines = 1;
+    
+    switch ([indexPath section])
+    {
+        case 0:
+            cell.textLabel.text = storyName;
+            break;
+        case 1:
+            cell.textLabel.text = author;
+            break;
+        case 2:
+            cell.textLabel.text = description;
+            cell.textLabel.numberOfLines = 0;
+            break;
+    }
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSString *text;
+    
+    switch ([indexPath section])
+    {
+        case 0:
+            text = storyName;
+            break;
+        case 1:
+            text = author;
+            break;
+        case 2:
+            text = description;
+            break;
+    }
+    
+    CGSize constraint = CGSizeMake(CELL_CONTENT_WIDTH - (CELL_CONTENT_MARGIN * 2), 20000.0f);
+    
+    CGSize size = [text sizeWithFont:[UIFont systemFontOfSize:[UIFont labelFontSize]] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    CGSize lineSize = [@"1" sizeWithFont:[UIFont systemFontOfSize:[UIFont labelFontSize]] constrainedToSize:constraint lineBreakMode:UILineBreakModeWordWrap];
+    
+    
+    if(size.height / lineSize.height > 1)
+    {
+        return size.height + (CELL_CONTENT_MARGIN * 2);
+    }
+    return 44.0f;
+    
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    if (section == 0)
+    {
+        return @"Story Name";
+    }
+    if (section == 1)
+    {
+        return @"Author";
+    }
+    if (section == 2)
+    {
+        return @"Description";
+    }
+    return @"";
 }
 
 /*

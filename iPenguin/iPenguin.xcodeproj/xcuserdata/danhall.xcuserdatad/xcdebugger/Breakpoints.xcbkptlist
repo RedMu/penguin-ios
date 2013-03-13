@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/StoryViewController.m"
-         timestampString = "384898976.837743"
+         timestampString = "384902407.496018"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "49"
-         endingLineNumber = "49"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>

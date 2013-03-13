@@ -46,11 +46,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryCell" textLabel="Los-7y-Hzm" detailTextLabel="xhd-PP-MoF" style="IBUITableViewCellStyleSubtitle" id="MYy-jt-qoq">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryCell" textLabel="Los-7y-Hzm" detailTextLabel="xhd-PP-MoF" style="IBUITableViewCellStyleSubtitle" id="MYy-jt-qoq">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <rect key="frame" x="10" y="1" width="280" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Los-7y-Hzm">
@@ -66,6 +66,9 @@
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <connections>
+                                    <segue destination="j9x-dU-EKq" kind="push" id="dOy-mO-0LD"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -77,7 +80,37 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Yd-Gu-LIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1154" y="-1032"/>
+            <point key="canvasLocation" x="1186" y="-1026"/>
+        </scene>
+        <!--Story Details View Controller-->
+        <scene sceneID="0gv-05-GmB">
+            <objects>
+                <tableViewController id="j9x-dU-EKq" customClass="StoryDetailsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="aJv-NN-Tep">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryDetailCell" id="xFQ-D3-czA">
+                                <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="j9x-dU-EKq" id="8gu-MJ-FhU"/>
+                            <outlet property="delegate" destination="j9x-dU-EKq" id="xhB-JA-in8"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="11a-t0-mnX"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X0R-on-oyk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1718" y="-1026"/>
         </scene>
         <!--Navigation Controller - Queues-->
         <scene sceneID="YzL-Pr-V9w">
@@ -93,7 +126,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="p95-RF-0bM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-1007"/>
+            <point key="canvasLocation" x="140" y="-1026"/>
         </scene>
         <!--View Controller - Config-->
         <scene sceneID="8ad-dw-o46">
@@ -154,6 +187,23 @@
             <point key="canvasLocation" x="-631" y="-505"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="QueueViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="setEditMode:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="StoryDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryDetailsViewController.h"/>
+        </class>
+        <class className="StoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
