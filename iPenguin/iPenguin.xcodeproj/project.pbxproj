@@ -26,6 +26,8 @@
 		606B2E7116DC169A00B75A63 /* QueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7016DC169A00B75A63 /* QueueViewController.m */; };
 		606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7316DC259200B75A63 /* StoryViewController.m */; };
 		60B3132816F122F90040BD92 /* StoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B3132716F122F90040BD92 /* StoryDetailsViewController.m */; };
+		60E51AC716F13206008CBE7C /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC616F13206008CBE7C /* 20-gear2.png */; };
+		60E51ACA16F13257008CBE7C /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC916F13257008CBE7C /* 33-cabinet.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +68,8 @@
 		606B2E7316DC259200B75A63 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
 		60B3132616F122F90040BD92 /* StoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryDetailsViewController.h; sourceTree = "<group>"; };
 		60B3132716F122F90040BD92 /* StoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryDetailsViewController.m; sourceTree = "<group>"; };
+		60E51AC616F13206008CBE7C /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
+		60E51AC916F13257008CBE7C /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,8 @@
 		606B2E3716DC148200B75A63 /* iPenguin */ = {
 			isa = PBXGroup;
 			children = (
+				60E51AC916F13257008CBE7C /* 33-cabinet.png */,
+				60E51AC616F13206008CBE7C /* 20-gear2.png */,
 				606B2E4016DC148200B75A63 /* AppDelegate.h */,
 				606B2E4116DC148200B75A63 /* AppDelegate.m */,
 				606B2E4916DC148200B75A63 /* MainStoryboard_iPhone.storyboard */,
@@ -250,6 +256,8 @@
 				606B2E4816DC148200B75A63 /* Default-568h@2x.png in Resources */,
 				606B2E4B16DC148200B75A63 /* MainStoryboard_iPhone.storyboard in Resources */,
 				606B2E4E16DC148200B75A63 /* MainStoryboard_iPad.storyboard in Resources */,
+				60E51AC716F13206008CBE7C /* 20-gear2.png in Resources */,
+				60E51ACA16F13257008CBE7C /* 33-cabinet.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

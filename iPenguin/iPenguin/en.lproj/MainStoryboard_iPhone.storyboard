@@ -116,7 +116,7 @@
         <scene sceneID="YzL-Pr-V9w">
             <objects>
                 <navigationController definesPresentationContext="YES" id="kkQ-b1-T2H" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Queues" id="V0b-Xp-RDA"/>
+                    <tabBarItem key="tabBarItem" title="Queues" image="33-cabinet.png" id="V0b-Xp-RDA"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ues-sg-oIe">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -161,7 +161,7 @@
                             <constraint firstItem="opY-v3-QLv" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="69" id="zI8-Bb-g6q"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Config" id="cFA-Y8-bgw"/>
+                    <tabBarItem key="tabBarItem" title="Config" image="20-gear2.png" id="cFA-Y8-bgw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KzU-cU-qt0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -187,6 +187,10 @@
             <point key="canvasLocation" x="-631" y="-505"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="20-gear2.png" width="26" height="28"/>
+        <image name="33-cabinet.png" width="20" height="26"/>
+    </resources>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
