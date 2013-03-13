@@ -151,13 +151,21 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="center" image="penguin114.png" translatesAutoresizingMaskIntoConstraints="NO" id="zGK-LQ-DCJ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="3Tm-J6-JCf"/>
+                                    <constraint firstAttribute="width" constant="240" id="5mK-fW-RoA"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="AoL-Hk-yb1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5px-pK-5Md"/>
+                            <constraint firstItem="opY-v3-QLv" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="85" id="IdG-Km-8ag"/>
                             <constraint firstItem="AoL-Hk-yb1" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="106" id="OgU-X5-n4O"/>
+                            <constraint firstItem="zGK-LQ-DCJ" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="186" id="Zxz-Ow-K5B"/>
                             <constraint firstItem="AoL-Hk-yb1" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lTP-X2-Qz6"/>
-                            <constraint firstItem="opY-v3-QLv" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="85" id="pmW-Xe-NHO"/>
+                            <constraint firstItem="zGK-LQ-DCJ" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="32" id="mwG-Z9-SWm"/>
                             <constraint firstItem="opY-v3-QLv" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="69" id="zI8-Bb-g6q"/>
                         </constraints>
                     </view>
@@ -190,7 +198,28 @@
     <resources>
         <image name="20-gear2.png" width="26" height="28"/>
         <image name="33-cabinet.png" width="20" height="26"/>
+        <image name="penguin114.png" width="114" height="114"/>
     </resources>
+    <classes>
+        <class className="ConfigViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="QueueViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="setEditMode:" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="StoryDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryDetailsViewController.h"/>
+        </class>
+        <class className="StoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
