@@ -29,6 +29,8 @@
 		60E51AC716F13206008CBE7C /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC616F13206008CBE7C /* 20-gear2.png */; };
 		60E51ACA16F13257008CBE7C /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC916F13257008CBE7C /* 33-cabinet.png */; };
 		60E51AD016F13517008CBE7C /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E51ACF16F13517008CBE7C /* ConfigViewController.m */; };
+		60E51AD616F14121008CBE7C /* penguin114.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AD516F14121008CBE7C /* penguin114.png */; };
+		60E51AD816F14152008CBE7C /* penguin57.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AD716F14152008CBE7C /* penguin57.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		60E51AC916F13257008CBE7C /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		60E51ACE16F13517008CBE7C /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		60E51ACF16F13517008CBE7C /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		60E51AD516F14121008CBE7C /* penguin114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin114.png; sourceTree = "<group>"; };
+		60E51AD716F14152008CBE7C /* penguin57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,8 @@
 		606B2E2216DC148200B75A63 = {
 			isa = PBXGroup;
 			children = (
+				60E51AD716F14152008CBE7C /* penguin57.png */,
+				60E51AD516F14121008CBE7C /* penguin114.png */,
 				606B2E3716DC148200B75A63 /* iPenguin */,
 				606B2E5E16DC148200B75A63 /* iPenguinTests */,
 				606B2E3016DC148200B75A63 /* Frameworks */,
@@ -263,6 +269,8 @@
 				606B2E4E16DC148200B75A63 /* MainStoryboard_iPad.storyboard in Resources */,
 				60E51AC716F13206008CBE7C /* 20-gear2.png in Resources */,
 				60E51ACA16F13257008CBE7C /* 33-cabinet.png in Resources */,
+				60E51AD616F14121008CBE7C /* penguin114.png in Resources */,
+				60E51AD816F14152008CBE7C /* penguin57.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
