@@ -143,11 +143,11 @@
                                     <outlet property="delegate" destination="s6m-87-iki" id="YOL-zg-oYs"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Penguin Server URL" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opY-v3-QLv">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Penguin Server URL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opY-v3-QLv">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="165" id="ifa-Yj-D6F"/>
+                                    <constraint firstAttribute="height" constant="21" id="yde-Uj-xYC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -160,8 +160,9 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="opY-v3-QLv" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="2Rs-02-z7w"/>
                             <constraint firstAttribute="trailing" secondItem="AoL-Hk-yb1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5px-pK-5Md"/>
-                            <constraint firstItem="opY-v3-QLv" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="85" id="IdG-Km-8ag"/>
+                            <constraint firstAttribute="trailing" secondItem="opY-v3-QLv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ile-9K-m1n"/>
                             <constraint firstItem="AoL-Hk-yb1" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="106" id="OgU-X5-n4O"/>
                             <constraint firstItem="zGK-LQ-DCJ" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="186" id="Zxz-Ow-K5B"/>
                             <constraint firstItem="AoL-Hk-yb1" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lTP-X2-Qz6"/>
