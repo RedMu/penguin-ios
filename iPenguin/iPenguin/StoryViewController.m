@@ -31,10 +31,9 @@ NSArray *stories;
 {
     [super viewDidLoad];
     
-    stories = [NSArray arrayWithObjects:@"S-123456", @"S-789101", @"D-192837", nil];
-    
-    
+    //NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://penguin.office.blackpepper.co.uk/api/queues"]];
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://virtualpenguin.herokuapp.com/api/queues"]];
+    
     NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
     
     NSMutableArray *tempStories = [NSMutableArray new];
@@ -47,7 +46,14 @@ NSArray *stories;
         {
             for(NSDictionary *story in [currentQueue objectForKey:@"stories"])
             {
-                [tempStories addObject:[story objectForKey:@"name"]];
+                NSMutableDictionary *storyDetails = [[NSMutableDictionary alloc] init];
+                
+                [storyDetails setObject:[story objectForKey:@"author"] forKey:@"author"];
+                [storyDetails setObject:[story objectForKey:@"description"] forKey:@"description"];
+                [storyDetails setObject:[story objectForKey:@"name"] forKey:@"name"];
+                [storyDetails setObject:[story objectForKey:@"_id"] forKey:@"_id"];                
+                
+                [tempStories addObject:storyDetails];
             }
         }
     }
@@ -89,7 +95,8 @@ NSArray *stories;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    cell.textLabel.text = [stories objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.detailTextLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"author"];
     
     return cell;
 }

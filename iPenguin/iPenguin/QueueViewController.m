@@ -37,8 +37,10 @@ NSString *url = @"";
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
+
+    //NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://penguin.office.blackpepper.co.uk/api/queues"]];
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://virtualpenguin.herokuapp.com/api/queues"]];
+    
     NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
 
     NSMutableArray *tempQueues = [NSMutableArray new];
