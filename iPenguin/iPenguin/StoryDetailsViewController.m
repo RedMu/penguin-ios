@@ -17,7 +17,7 @@
 #define CELL_CONTENT_WIDTH 300.0f
 #define CELL_CONTENT_MARGIN 15.0f
 
-@synthesize storyName, description, author;
+@synthesize reference ,author, description, merged;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -51,7 +51,7 @@
 {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 3;
+    return 4;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -68,16 +68,29 @@
     
     cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.textLabel.numberOfLines = 1;
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
     switch ([indexPath section])
     {
         case 0:
-            cell.textLabel.text = storyName;
+            cell.textLabel.text = reference;
             break;
         case 1:
             cell.textLabel.text = author;
             break;
         case 2:
+            if([merged boolValue] == YES)
+            {
+                cell.textLabel.text = @"Story merged";
+                cell.accessoryType = UITableViewCellAccessoryCheckmark;
+            }
+            else
+            {
+                cell.textLabel.text = @"Story awaiting merged";
+            }
+            
+            break;
+        case 3:
             cell.textLabel.text = description;
             cell.textLabel.numberOfLines = 0;
             break;
@@ -93,12 +106,15 @@
     switch ([indexPath section])
     {
         case 0:
-            text = storyName;
+            text = reference;
             break;
         case 1:
             text = author;
             break;
         case 2:
+            text = @"1";
+            break;
+        case 3:
             text = description;
             break;
     }
@@ -121,7 +137,7 @@
 {
     if (section == 0)
     {
-        return @"Story Name";
+        return @"Story Reference";
     }
     if (section == 1)
     {
@@ -129,7 +145,11 @@
     }
     if (section == 2)
     {
-        return @"Description";
+        return @"Merged?";
+    }
+    if (section == 3)
+    {
+        return @"Story Description";
     }
     return @"";
 }

@@ -201,26 +201,6 @@
         <image name="33-cabinet.png" width="20" height="26"/>
         <image name="penguin114.png" width="114" height="114"/>
     </resources>
-    <classes>
-        <class className="ConfigViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigViewController.h"/>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="QueueViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="setEditMode:" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="StoryDetailsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryDetailsViewController.h"/>
-        </class>
-        <class className="StoryViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

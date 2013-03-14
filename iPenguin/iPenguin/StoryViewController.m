@@ -53,10 +53,14 @@ NSArray *stories;
             {
                 NSMutableDictionary *storyDetails = [[NSMutableDictionary alloc] init];
                 
+                [storyDetails setObject:[story objectForKey:@"_id"] forKey:@"_id"];
+                [storyDetails setObject:[story objectForKey:@"reference"] forKey:@"reference"];
                 [storyDetails setObject:[story objectForKey:@"author"] forKey:@"author"];
-                [storyDetails setObject:[story objectForKey:@"description"] forKey:@"description"];
-                [storyDetails setObject:[story objectForKey:@"name"] forKey:@"name"];
-                [storyDetails setObject:[story objectForKey:@"_id"] forKey:@"_id"];                
+                [storyDetails setObject:[story objectForKey:@"title"] forKey:@"title"];
+                
+                NSNumber *merged = [story objectForKey:@"merged"];
+                
+                [storyDetails setObject:merged forKey:@"merged"];
                 
                 [tempStories addObject:storyDetails];
             }
@@ -81,9 +85,10 @@ NSArray *stories;
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     
-    [segue.destinationViewController setStoryName:[[stories objectAtIndex:[indexPath row]] objectForKey:@"name"]];
+    [segue.destinationViewController setReference:[[stories objectAtIndex:[indexPath row]] objectForKey:@"reference"]];
     [segue.destinationViewController setAuthor:[[stories objectAtIndex:[indexPath row]] objectForKey:@"author"]];
-    [segue.destinationViewController setDescription:[[stories objectAtIndex:[indexPath row]] objectForKey:@"description"]];
+    [segue.destinationViewController setDescription:[[stories objectAtIndex:[indexPath row]] objectForKey:@"title"]];
+    [segue.destinationViewController setMerged:[[stories objectAtIndex:[indexPath row]] objectForKey:@"merged"]];
 }
 
 #pragma mark - Table view data source
@@ -108,9 +113,19 @@ NSArray *stories;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    cell.textLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"reference"];
     cell.detailTextLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"author"];
     
+    
+    
+    if([[[stories objectAtIndex:indexPath.row] objectForKey:@"merged"] boolValue] == YES)
+    {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }
+    else
+    {
+                cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     return cell;
 }
 
