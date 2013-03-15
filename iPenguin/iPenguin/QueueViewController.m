@@ -8,7 +8,8 @@
 
 #import "QueueViewController.h"
 #import "StoryViewController.h"
-#import "AppDelegate.h"
+#import "PenguinService.h"
+#import "PenguinServiceImpl.h"
 
 @interface QueueViewController ()
 
@@ -19,6 +20,8 @@
 NSArray *queues;
 
 NSString *url = @"";
+
+PenguinServiceImpl *service;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -32,6 +35,8 @@ NSString *url = @"";
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    service = [[PenguinServiceImpl alloc] init];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -43,8 +48,7 @@ NSString *url = @"";
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    if(appDelegate.url == nil)
+    if([service isAvailable] == NO)
     {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Config missing"
                                                         message:@"No server was found, please select Config tab and enter server URL"
@@ -56,19 +60,7 @@ NSString *url = @"";
     }
     else
     {
-        NSString *url = [appDelegate.url stringByAppendingString:@"/api/queues"];
-        
-        NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-        
-        NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-        
-        NSMutableArray *tempQueues = [NSMutableArray new];
-        
-        for (NSDictionary *queue in jsonObjects) {
-            [tempQueues addObject:[queue objectForKey:@"name"]];
-        }
-        
-        queues = [[NSArray alloc] initWithArray:tempQueues];
+        queues = [service getQueues];
     }
     [self.tableView reloadData];
 }
@@ -76,28 +68,13 @@ NSString *url = @"";
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     
-    [segue.destinationViewController setQueue:[queues objectAtIndex:[indexPath row]]];
+    [segue.destinationViewController setQueue:[[queues objectAtIndex:[indexPath row]] objectForKey:QUEUE_ID]];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (IBAction)setEditMode:(UIBarButtonItem *)sender {
-    
-    //Wire to bar button item.....
-    
-    if (self.editing) {
-        sender.title = @"Edit";
-        sender.style = UIBarButtonItemStylePlain;
-        [super setEditing:NO animated:YES];
-    } else {
-        sender.title = @"Done";
-        sender.style = UIBarButtonItemStyleDone;
-        [super setEditing:YES animated:YES];
-    }
 }
 
 #pragma mark - Table view data source
@@ -121,33 +98,30 @@ NSString *url = @"";
     
     
     // Configure the cell...
-    cell.textLabel.text = [queues objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_NAME];
+    cell.detailTextLabel.text = [[[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_PENDING_MERGE_COUNT] stringValue];
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+//// Override to support conditional editing of the table view.
+//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    // Return NO if you do not want the specified item to be editable.
+//    return YES;
+//}
+//
+//// Override to support editing the table view.
+//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    if (editingStyle == UITableViewCellEditingStyleDelete) {
+//        // Delete the row from the data source
+//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//    }   
+//    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+//    }   
+//}
 
 /*
 // Override to support rearranging the table view.

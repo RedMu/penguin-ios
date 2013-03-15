@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600E7FDD16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */; };
+		600E7FDE16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */; };
 		606B2E3216DC148200B75A63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3116DC148200B75A63 /* UIKit.framework */; };
 		606B2E3416DC148200B75A63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3316DC148200B75A63 /* Foundation.framework */; };
 		606B2E3616DC148200B75A63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3516DC148200B75A63 /* CoreGraphics.framework */; };
@@ -44,6 +46,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		600E7FDA16F35AB400E4C93B /* PenguinService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenguinService.h; sourceTree = "<group>"; };
+		600E7FDB16F38F7900E4C93B /* PenguinServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenguinServiceImpl.h; sourceTree = "<group>"; };
+		600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenguinServiceImpl.m; sourceTree = "<group>"; };
 		606B2E2D16DC148200B75A63 /* iPenguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPenguin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606B2E3116DC148200B75A63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		606B2E3316DC148200B75A63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -153,6 +158,9 @@
 				60B3132716F122F90040BD92 /* StoryDetailsViewController.m */,
 				60E51ACE16F13517008CBE7C /* ConfigViewController.h */,
 				60E51ACF16F13517008CBE7C /* ConfigViewController.m */,
+				600E7FDA16F35AB400E4C93B /* PenguinService.h */,
+				600E7FDB16F38F7900E4C93B /* PenguinServiceImpl.h */,
+				600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */,
 			);
 			path = iPenguin;
 			sourceTree = "<group>";
@@ -311,6 +319,7 @@
 				606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */,
 				60B3132816F122F90040BD92 /* StoryDetailsViewController.m in Sources */,
 				60E51AD016F13517008CBE7C /* ConfigViewController.m in Sources */,
+				600E7FDD16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -319,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				606B2E6616DC148200B75A63 /* iPenguinTests.m in Sources */,
+				600E7FDE16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

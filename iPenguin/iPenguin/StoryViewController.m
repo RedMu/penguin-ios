@@ -45,9 +45,9 @@ NSArray *stories;
     
     for (NSDictionary *currentQueue in jsonObjects) {
 
-        NSString *queueName = [currentQueue objectForKey:@"name"];
+        NSString *queueId = [currentQueue objectForKey:@"_id"];
         
-        if([queueName isEqualToString:queue])
+        if([queueId isEqualToString:queue])
         {
             for(NSDictionary *story in [currentQueue objectForKey:@"stories"])
             {

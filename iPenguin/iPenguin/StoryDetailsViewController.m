@@ -69,6 +69,7 @@
     cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.textLabel.numberOfLines = 1;
     cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.backgroundColor = [UIColor whiteColor];
     
     switch ([indexPath section])
     {
@@ -83,10 +84,12 @@
             {
                 cell.textLabel.text = @"Story merged";
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
+                cell.backgroundColor = [UIColor greenColor];
             }
             else
             {
-                cell.textLabel.text = @"Story awaiting merged";
+                cell.textLabel.text = @"Story pending merge";
+                cell.backgroundColor = [UIColor redColor];
             }
             
             break;
