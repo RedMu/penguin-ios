@@ -14,6 +14,7 @@
 
 -(BOOL)isAvailable;
 -(BOOL)shouldShowMerged;
+-(void)setShouldShowMerged:(BOOL)showMerged;
 
 
 -(NSArray *)getQueues;

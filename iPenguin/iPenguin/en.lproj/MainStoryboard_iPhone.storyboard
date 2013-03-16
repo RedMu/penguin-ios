@@ -57,6 +57,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <gestureRecognizers/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="StoryCell" textLabel="Los-7y-Hzm" detailTextLabel="xhd-PP-MoF" style="IBUITableViewCellStyleSubtitle" id="MYy-jt-qoq">
                                 <rect key="frame" x="0.0" y="46" width="320" height="46"/>
@@ -86,11 +87,21 @@
                         <connections>
                             <outlet property="dataSource" destination="iiu-lI-HUi" id="cbw-99-uRs"/>
                             <outlet property="delegate" destination="iiu-lI-HUi" id="1cM-oi-tXQ"/>
+                            <outletCollection property="gestureRecognizers" destination="XSq-5z-N75" appends="YES" id="0pq-qR-7PK"/>
+                            <outletCollection property="gestureRecognizers" destination="XSq-5z-N75" appends="YES" id="Yzu-rF-lTh"/>
+                            <outletCollection property="gestureRecognizers" destination="XSq-5z-N75" appends="YES" id="Z3c-Vx-Zit"/>
+                            <outletCollection property="gestureRecognizers" destination="XSq-5z-N75" appends="YES" id="Lsj-Sj-2Bk"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Stories" id="GNi-Cs-ZoA"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Yd-Gu-LIb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <pinchGestureRecognizer id="XSq-5z-N75">
+                    <connections>
+                        <action selector="handlePinch:" destination="iiu-lI-HUi" id="igf-M8-xwf"/>
+                        <outlet property="delegate" destination="iiu-lI-HUi" id="XAa-0S-852"/>
+                    </connections>
+                </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1186" y="-1026"/>
         </scene>
@@ -169,11 +180,6 @@
                                     <constraint firstAttribute="width" constant="240" id="5mK-fW-RoA"/>
                                 </constraints>
                             </imageView>
-                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ugs-zV-xFh">
-                                <connections>
-                                    <action selector="switchChanged:" destination="s6m-87-iki" eventType="valueChanged" id="pQd-2M-Y91"/>
-                                </connections>
-                            </switch>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                         <constraints>
@@ -181,11 +187,9 @@
                             <constraint firstAttribute="trailing" secondItem="AoL-Hk-yb1" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="5px-pK-5Md"/>
                             <constraint firstAttribute="bottom" secondItem="zGK-LQ-DCJ" secondAttribute="bottom" constant="63" id="GF7-JM-dVT"/>
                             <constraint firstAttribute="trailing" secondItem="opY-v3-QLv" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Ile-9K-m1n"/>
-                            <constraint firstItem="ugs-zV-xFh" firstAttribute="centerX" secondItem="AoL-Hk-yb1" secondAttribute="centerX" type="default" id="MIc-sd-pvo"/>
                             <constraint firstItem="AoL-Hk-yb1" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="106" id="OgU-X5-n4O"/>
                             <constraint firstItem="AoL-Hk-yb1" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="lTP-X2-Qz6"/>
                             <constraint firstItem="zGK-LQ-DCJ" firstAttribute="leading" secondItem="e9L-zB-WiK" secondAttribute="leading" constant="34" id="m21-0c-Rzj"/>
-                            <constraint firstItem="ugs-zV-xFh" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="166" id="opA-og-dXT"/>
                             <constraint firstItem="opY-v3-QLv" firstAttribute="top" secondItem="e9L-zB-WiK" secondAttribute="top" constant="69" id="zI8-Bb-g6q"/>
                         </constraints>
                     </view>
@@ -220,6 +224,26 @@
         <image name="33-cabinet.png" width="20" height="26"/>
         <image name="penguin114.png" width="114" height="114"/>
     </resources>
+    <classes>
+        <class className="ConfigViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ConfigViewController.h"/>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="QueueViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/QueueViewController.h"/>
+        </class>
+        <class className="StoryDetailsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryDetailsViewController.h"/>
+        </class>
+        <class className="StoryViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/StoryViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="handlePinch:" candidateClass="UIPinchGestureRecognizer"/>
+            </relationships>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

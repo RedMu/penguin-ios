@@ -44,6 +44,12 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     return [appDelegate.showMerged boolValue];
 }
 
+-(void)setShouldShowMerged:(BOOL)showMerged
+{
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    [appDelegate setShowMerged:[NSNumber numberWithBool:showMerged]];
+}
+
 -(NSArray *)getQueues
 {
     NSString *url = [[self getURL] stringByAppendingString:@"/api/queues"];

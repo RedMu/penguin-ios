@@ -105,6 +105,22 @@ PenguinServiceImpl *service;
     return cell;
 }
 
+- (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
+    if(recognizer.state == UIGestureRecognizerStateEnded)
+    {
+        if(recognizer.scale > 1)
+        {
+            [service setShouldShowMerged:YES];
+        }
+        else
+        {
+            [service setShouldShowMerged:NO];
+        }
+        [self viewWillAppear:YES];
+        [self.tableView reloadData];
+    }
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
