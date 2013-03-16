@@ -41,17 +41,17 @@ UILabel *loadingLabel;
     
     service = [PenguinServiceImpl new];
     
-    loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 75)];
+    loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 210, 75)];
     loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
     loadingView.clipsToBounds = YES;
     loadingView.layer.cornerRadius = 10.0;
     
-    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, 130, 22)];
+    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, 190, 22)];
     loadingLabel.backgroundColor = [UIColor clearColor];
     loadingLabel.textColor = [UIColor whiteColor];
     loadingLabel.adjustsFontSizeToFitWidth = YES;
     loadingLabel.textAlignment = UITextAlignmentCenter;
-    loadingLabel.text = @"Show/hide merged";
+    loadingLabel.text = @"Show/hide merged stories";
     [loadingView addSubview:loadingLabel];
 
     // Uncomment the following line to preserve selection between presentations.
