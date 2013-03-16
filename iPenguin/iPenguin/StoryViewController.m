@@ -9,6 +9,7 @@
 #import "StoryViewController.h"
 #import "StoryDetailsViewController.h"
 #import "PenguinServiceImpl.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface StoryViewController ()
 
@@ -20,6 +21,9 @@
 
 NSArray *stories;
 PenguinServiceImpl *service;
+
+UIView *loadingView;
+UILabel *loadingLabel;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -36,6 +40,19 @@ PenguinServiceImpl *service;
     [super viewDidLoad];
     
     service = [PenguinServiceImpl new];
+    
+    loadingView = [[UIView alloc] initWithFrame:CGRectMake(75, 155, 170, 75)];
+    loadingView.backgroundColor = [UIColor colorWithRed:0 green:0 blue:0 alpha:0.5];
+    loadingView.clipsToBounds = YES;
+    loadingView.layer.cornerRadius = 10.0;
+    
+    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(20, 25, 130, 22)];
+    loadingLabel.backgroundColor = [UIColor clearColor];
+    loadingLabel.textColor = [UIColor whiteColor];
+    loadingLabel.adjustsFontSizeToFitWidth = YES;
+    loadingLabel.textAlignment = UITextAlignmentCenter;
+    loadingLabel.text = @"Show/hide merged";
+    [loadingView addSubview:loadingLabel];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -106,8 +123,13 @@ PenguinServiceImpl *service;
 }
 
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
+    if(recognizer.state == UIGestureRecognizerStateBegan)
+    {
+        [self.view addSubview:loadingView];
+    }
     if(recognizer.state == UIGestureRecognizerStateEnded)
     {
+        [loadingView removeFromSuperview];
         if(recognizer.scale > 1)
         {
             [service setShouldShowMerged:YES];

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		600E7FDD16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */; };
 		600E7FDE16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */; };
+		600E7FE016F401C100E4C93B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600E7FDF16F401C100E4C93B /* QuartzCore.framework */; };
 		606B2E3216DC148200B75A63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3116DC148200B75A63 /* UIKit.framework */; };
 		606B2E3416DC148200B75A63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3316DC148200B75A63 /* Foundation.framework */; };
 		606B2E3616DC148200B75A63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3516DC148200B75A63 /* CoreGraphics.framework */; };
@@ -49,6 +50,7 @@
 		600E7FDA16F35AB400E4C93B /* PenguinService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenguinService.h; sourceTree = "<group>"; };
 		600E7FDB16F38F7900E4C93B /* PenguinServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenguinServiceImpl.h; sourceTree = "<group>"; };
 		600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenguinServiceImpl.m; sourceTree = "<group>"; };
+		600E7FDF16F401C100E4C93B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		606B2E2D16DC148200B75A63 /* iPenguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPenguin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		606B2E3116DC148200B75A63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		606B2E3316DC148200B75A63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				600E7FE016F401C100E4C93B /* QuartzCore.framework in Frameworks */,
 				606B2E3216DC148200B75A63 /* UIKit.framework in Frameworks */,
 				606B2E3416DC148200B75A63 /* Foundation.framework in Frameworks */,
 				606B2E3616DC148200B75A63 /* CoreGraphics.framework in Frameworks */,
@@ -111,6 +114,7 @@
 		606B2E2216DC148200B75A63 = {
 			isa = PBXGroup;
 			children = (
+				600E7FDF16F401C100E4C93B /* QuartzCore.framework */,
 				60E51AD716F14152008CBE7C /* penguin57.png */,
 				60E51AD516F14121008CBE7C /* penguin114.png */,
 				606B2E3716DC148200B75A63 /* iPenguin */,

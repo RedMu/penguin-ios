@@ -229,11 +229,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/StoryViewController.m"
-         timestampString = "385086697.477368"
+         timestampString = "385090131.136582"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "75"
-         endingLineNumber = "75"
+         startingLineNumber = "92"
+         endingLineNumber = "92"
          landmarkName = "-numberOfSectionsInTableView:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -268,11 +268,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/StoryViewController.m"
-         timestampString = "385088039.386665"
+         timestampString = "385090131.136582"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "110"
-         endingLineNumber = "110"
+         startingLineNumber = "131"
+         endingLineNumber = "131"
          landmarkName = "-handlePinch:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -281,11 +281,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/StoryViewController.m"
-         timestampString = "385088114.665017"
+         timestampString = "385090131.136582"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "111"
-         endingLineNumber = "111"
+         startingLineNumber = "133"
+         endingLineNumber = "133"
          landmarkName = "-handlePinch:"
          landmarkType = "5">
       </FileBreakpoint>
