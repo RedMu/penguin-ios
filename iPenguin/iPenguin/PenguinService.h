@@ -13,12 +13,14 @@
 @required
 
 -(BOOL)isAvailable;
+-(BOOL)shouldShowMerged;
+
 
 -(NSArray *)getQueues;
 
 -(NSArray *)getStoriesForQueue:(NSString *)queueId;
 -(NSArray *)getStoriesPendingMergeForQueue:(NSString *)queueId;
 
--(NSDictionary *)getStoryDetails:(NSString *)storyId;
+-(NSDictionary *)getStoryDetailsForStory:(NSString *)storyId;
 
 @end

@@ -7,19 +7,6 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "iPenguin/StoryViewController.m"
-         timestampString = "384909352.746887"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "54"
-         endingLineNumber = "54"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "iPenguin/ConfigViewController.m"
          timestampString = "384908400.745965"
          startingColumnNumber = "9223372036854775807"
@@ -72,25 +59,12 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "iPenguin/StoryViewController.m"
-         timestampString = "384951696.864804"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "63"
-         endingLineNumber = "63"
-         landmarkName = "-viewDidLoad"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385066683.873955"
+         timestampString = "385084500.77956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "36"
-         endingLineNumber = "36"
+         startingLineNumber = "37"
+         endingLineNumber = "37"
          landmarkName = "-getURL"
          landmarkType = "5">
       </FileBreakpoint>
@@ -125,20 +99,7 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385066730.542953"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "37"
-         endingLineNumber = "37"
-         landmarkName = "-getURL"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385066731.532922"
+         timestampString = "385084500.77956"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "38"
@@ -151,11 +112,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385066746.383002"
+         timestampString = "385086330.557397"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "42"
-         endingLineNumber = "42"
+         startingLineNumber = "41"
+         endingLineNumber = "41"
+         landmarkName = "-shouldShowMerged"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iPenguin/PenguinServiceImpl.m"
+         timestampString = "385086330.557397"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "49"
+         endingLineNumber = "49"
          landmarkName = "-getQueues"
          landmarkType = "5">
       </FileBreakpoint>
@@ -164,11 +138,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385067868.686861"
+         timestampString = "385086330.557397"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "69"
-         endingLineNumber = "69"
+         startingLineNumber = "76"
+         endingLineNumber = "76"
          landmarkName = "-getQueues"
          landmarkType = "5">
       </FileBreakpoint>
@@ -177,11 +151,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385067868.686861"
+         timestampString = "385086330.557397"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "65"
-         endingLineNumber = "65"
+         startingLineNumber = "72"
+         endingLineNumber = "72"
          landmarkName = "-getQueues"
          landmarkType = "5">
       </FileBreakpoint>
@@ -190,11 +164,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385068460.878816"
+         timestampString = "385086330.557397"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "47"
-         endingLineNumber = "47"
+         startingLineNumber = "54"
+         endingLineNumber = "54"
          landmarkName = "-getQueues"
          landmarkType = "5">
       </FileBreakpoint>
@@ -203,11 +177,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385067868.686861"
+         timestampString = "385086330.557397"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "66"
-         endingLineNumber = "66"
+         startingLineNumber = "73"
+         endingLineNumber = "73"
          landmarkName = "-getQueues"
          landmarkType = "5">
       </FileBreakpoint>
@@ -229,11 +203,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385068195.617921"
+         timestampString = "385086330.557397"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "43"
-         endingLineNumber = "43"
+         startingLineNumber = "50"
+         endingLineNumber = "50"
          landmarkName = "-getQueues"
          landmarkType = "5">
       </FileBreakpoint>
@@ -242,12 +216,51 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/PenguinServiceImpl.m"
-         timestampString = "385068462.694103"
+         timestampString = "385086330.557397"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "50"
-         endingLineNumber = "50"
+         startingLineNumber = "57"
+         endingLineNumber = "57"
          landmarkName = "-getQueues"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iPenguin/StoryViewController.m"
+         timestampString = "385086697.477368"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "75"
+         endingLineNumber = "75"
+         landmarkName = "-numberOfSectionsInTableView:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iPenguin/PenguinServiceImpl.m"
+         timestampString = "385086330.557397"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "142"
+         endingLineNumber = "142"
+         landmarkName = "-getStoryDetailsForStory:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iPenguin/StoryDetailsViewController.m"
+         timestampString = "385085464.895968"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "95"
+         endingLineNumber = "95"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

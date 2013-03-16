@@ -99,7 +99,14 @@ PenguinServiceImpl *service;
     
     // Configure the cell...
     cell.textLabel.text = [[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_NAME];
-    cell.detailTextLabel.text = [[[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_PENDING_MERGE_COUNT] stringValue];
+    if([[[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_PENDING_MERGE_COUNT] intValue] == 1)
+    {
+        cell.detailTextLabel.text = [[[[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_PENDING_MERGE_COUNT] stringValue] stringByAppendingString:@" story pending merge"];
+    }
+    else
+    {
+        cell.detailTextLabel.text = [[[[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_PENDING_MERGE_COUNT] stringValue] stringByAppendingString:@" stories pending merge"];
+    }
     
     return cell;
 }

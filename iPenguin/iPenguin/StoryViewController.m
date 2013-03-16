@@ -8,7 +8,7 @@
 
 #import "StoryViewController.h"
 #import "StoryDetailsViewController.h"
-#import "AppDelegate.h"
+#import "PenguinServiceImpl.h"
 
 @interface StoryViewController ()
 
@@ -19,6 +19,7 @@
 @synthesize queue;
 
 NSArray *stories;
+PenguinServiceImpl *service;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,49 +32,29 @@ NSArray *stories;
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     
-    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-    
-    NSString *url = [appDelegate.url stringByAppendingString:@"/api/queues"];
-    
-    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
-    
-    NSArray *jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
-    
-    NSMutableArray *tempStories = [NSMutableArray new];
-    
-    for (NSDictionary *currentQueue in jsonObjects) {
-
-        NSString *queueId = [currentQueue objectForKey:@"_id"];
-        
-        if([queueId isEqualToString:queue])
-        {
-            for(NSDictionary *story in [currentQueue objectForKey:@"stories"])
-            {
-                NSMutableDictionary *storyDetails = [[NSMutableDictionary alloc] init];
-                
-                [storyDetails setObject:[story objectForKey:@"_id"] forKey:@"_id"];
-                [storyDetails setObject:[story objectForKey:@"reference"] forKey:@"reference"];
-                [storyDetails setObject:[story objectForKey:@"author"] forKey:@"author"];
-                [storyDetails setObject:[story objectForKey:@"title"] forKey:@"title"];
-                
-                NSNumber *merged = [story objectForKey:@"merged"];
-                
-                [storyDetails setObject:merged forKey:@"merged"];
-                
-                [tempStories addObject:storyDetails];
-            }
-        }
-    }
-    
-    stories = [[NSArray alloc] initWithArray:tempStories];
+    service = [PenguinServiceImpl new];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    if([service shouldShowMerged] == YES)
+    {
+        stories = [service getStoriesForQueue:queue];
+    }
+    else
+    {
+        stories = [service getStoriesPendingMergeForQueue:queue];
+    }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -85,24 +66,19 @@ NSArray *stories;
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     
-    [segue.destinationViewController setReference:[[stories objectAtIndex:[indexPath row]] objectForKey:@"reference"]];
-    [segue.destinationViewController setAuthor:[[stories objectAtIndex:[indexPath row]] objectForKey:@"author"]];
-    [segue.destinationViewController setDescription:[[stories objectAtIndex:[indexPath row]] objectForKey:@"title"]];
-    [segue.destinationViewController setMerged:[[stories objectAtIndex:[indexPath row]] objectForKey:@"merged"]];
+    [segue.destinationViewController setStoryId:[[stories objectAtIndex:[indexPath row]] objectForKey:STORY_ID]];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [stories count];
 }
@@ -113,18 +89,18 @@ NSArray *stories;
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
     // Configure the cell...
-    cell.textLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"reference"];
-    cell.detailTextLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:@"author"];
+    cell.textLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:STORY_REFERENCE];
+    cell.detailTextLabel.text = [[stories objectAtIndex:indexPath.row] objectForKey:STORY_AUTHOR];
     
     
     
-    if([[[stories objectAtIndex:indexPath.row] objectForKey:@"merged"] boolValue] == YES)
+    if([[[stories objectAtIndex:indexPath.row] objectForKey:STORY_MERGE] boolValue] == YES)
     {
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
     }
     else
     {
-                cell.accessoryType = UITableViewCellAccessoryNone;
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     return cell;
 }

@@ -10,9 +10,6 @@
 
 @interface StoryDetailsViewController : UITableViewController
 
-@property (strong, nonatomic) NSString *reference;
-@property (strong, nonatomic) NSString *author;
-@property (strong, nonatomic) NSString *description;
-@property (strong, nonatomic) NSString *merged;
+@property (strong, nonatomic) NSString *storyId;
 
 @end

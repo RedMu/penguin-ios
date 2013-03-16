@@ -84,4 +84,13 @@
     
 }
 
+-(IBAction)switchChanged:(id)sender
+{
+    UISwitch *uiSwitch = (UISwitch *)sender;
+    
+    AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    [appDelegate setShowMerged:[NSNumber numberWithBool:[uiSwitch isOn]]];
+}
+
 @end

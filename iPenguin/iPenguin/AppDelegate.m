@@ -10,13 +10,14 @@
 
 @implementation AppDelegate
 
-@synthesize url;
+@synthesize url, showMerged;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
 
     url = @"http://virtualpenguin.herokuapp.com";
+    showMerged = [NSNumber numberWithBool:YES];
     return YES;
 }
 							

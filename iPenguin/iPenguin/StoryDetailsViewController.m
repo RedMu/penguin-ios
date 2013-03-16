@@ -7,6 +7,7 @@
 //
 
 #import "StoryDetailsViewController.h"
+#import "PenguinServiceImpl.h"
 
 @interface StoryDetailsViewController ()
 
@@ -17,7 +18,11 @@
 #define CELL_CONTENT_WIDTH 300.0f
 #define CELL_CONTENT_MARGIN 15.0f
 
-@synthesize reference ,author, description, merged;
+@synthesize storyId;
+
+PenguinServiceImpl *service;
+NSDictionary *storyDetails;
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,12 +36,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    service = [PenguinServiceImpl new];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    storyDetails = [service getStoryDetailsForStory:storyId];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,13 +86,13 @@
     switch ([indexPath section])
     {
         case 0:
-            cell.textLabel.text = reference;
+            cell.textLabel.text = [storyDetails objectForKey:STORY_REFERENCE];
             break;
         case 1:
-            cell.textLabel.text = author;
+            cell.textLabel.text = [storyDetails objectForKey:STORY_AUTHOR];
             break;
         case 2:
-            if([merged boolValue] == YES)
+            if([[storyDetails objectForKey:STORY_MERGE] boolValue] == YES)
             {
                 cell.textLabel.text = @"Story merged";
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -94,7 +106,7 @@
             
             break;
         case 3:
-            cell.textLabel.text = description;
+            cell.textLabel.text = [storyDetails objectForKey:STORY_TITLE];
             cell.textLabel.numberOfLines = 0;
             break;
     }
@@ -109,16 +121,16 @@
     switch ([indexPath section])
     {
         case 0:
-            text = reference;
+            text = [storyDetails objectForKey:STORY_REFERENCE];
             break;
         case 1:
-            text = author;
+            text = [storyDetails objectForKey:STORY_AUTHOR];
             break;
         case 2:
             text = @"1";
             break;
         case 3:
-            text = description;
+            text = [storyDetails objectForKey:STORY_TITLE];
             break;
     }
     
@@ -148,7 +160,7 @@
     }
     if (section == 2)
     {
-        return @"Merged?";
+        return @"Merged Status";
     }
     if (section == 3)
     {
