@@ -25,5 +25,6 @@
 -(NSDictionary *)getStoryDetailsForStory:(NSString *)storyId;
 
 -(BOOL)deleteQueue:(NSString *)queueId;
+-(BOOL)createQueue:(NSString *)queueName;
 
 @end

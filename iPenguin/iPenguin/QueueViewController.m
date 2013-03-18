@@ -60,9 +60,17 @@ PenguinServiceImpl *service;
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     
-    [segue.destinationViewController setQueue:[[queues objectAtIndex:[indexPath row]] objectForKey:QUEUE_ID]];
+    if([sender isKindOfClass:[UIBarButtonItem class]])
+    {
+        
+    }
+    else
+    {
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    
+        [segue.destinationViewController setQueue:[[queues objectAtIndex:[indexPath row]] objectForKey:QUEUE_ID]];
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -156,7 +164,7 @@ PenguinServiceImpl *service;
         NSString *queueName = [[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_NAME];
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?"
-                                                        message:[NSString stringWithFormat:@"Are you sure you want to delete the %@ queue?  Once it's gone, it's gone!", queueName]
+                                                        message:[NSString stringWithFormat:@"Are you sure you want to delete %@?  Once it's gone, it's gone!", queueName]
                                                        delegate:self
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:@"Cancel", nil];

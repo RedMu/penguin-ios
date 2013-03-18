@@ -72,8 +72,36 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
         return YES;
     }
     return NO;
+}
+
+-(BOOL)createQueue:(NSString *)queueName
+{
     
+    NSString *identifier = @"/api/queues";
     
+    NSString *url = [[self getURL] stringByAppendingString:identifier];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"POST"];
+    
+    NSData *body = [[@"name=" stringByAppendingString:queueName] dataUsingEncoding:NSUTF8StringEncoding];
+    
+    [request setHTTPBody:body];
+    
+    NSError *requestError;
+    NSHTTPURLResponse *urlResponse = nil;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    
+    if([urlResponse statusCode] == 201)
+    {
+        return YES;
+    }
+    return NO;
+
 }
 
 -(NSArray *)getQueues
