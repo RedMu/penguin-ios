@@ -50,6 +50,32 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     [appDelegate setShowMerged:[NSNumber numberWithBool:showMerged]];
 }
 
+-(BOOL)deleteQueue:(NSString *)queueId
+{
+    NSString *identifier = [NSString stringWithFormat:@"/api/queue/%@", queueId];
+    
+    NSString *url = [[self getURL] stringByAppendingString:identifier];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"DELETE"];
+    
+    NSError *requestError;
+    NSHTTPURLResponse *urlResponse = nil;
+    
+    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    
+    if([urlResponse statusCode] == 204)
+    {
+        return YES;
+    }
+    return NO;
+    
+    
+}
+
 -(NSArray *)getQueues
 {
     NSString *url = [[self getURL] stringByAppendingString:@"/api/queues"];

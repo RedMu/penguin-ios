@@ -11,6 +11,8 @@
 #import "PenguinService.h"
 #import "PenguinServiceImpl.h"
 
+#
+
 @interface QueueViewController ()
 
 @end
@@ -18,9 +20,7 @@
 @implementation QueueViewController
 
 NSArray *queues;
-
-NSString *url = @"";
-
+NSNumber *deleteQueueIndex;
 PenguinServiceImpl *service;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -37,12 +37,6 @@ PenguinServiceImpl *service;
     [super viewDidLoad];
     
     service = [[PenguinServiceImpl alloc] init];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 
 }
 
@@ -111,24 +105,69 @@ PenguinServiceImpl *service;
     return cell;
 }
 
-//// Override to support conditional editing of the table view.
-//- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    // Return NO if you do not want the specified item to be editable.
-//    return YES;
-//}
-//
-//// Override to support editing the table view.
-//- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    if (editingStyle == UITableViewCellEditingStyleDelete) {
-//        // Delete the row from the data source
-//        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-//    }   
-//    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-//        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-//    }   
-//}
+// Override to support conditional editing of the table view.
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // Return NO if you do not want the specified item to be editable.
+    return YES;
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (alertView.tag) {
+        case 0:
+            switch (buttonIndex) {
+                case 0:
+                {
+                    NSString *queueId = [[queues objectAtIndex:[deleteQueueIndex integerValue]] objectForKey:QUEUE_ID];
+                    BOOL deleted = [service deleteQueue:queueId];
+                    
+                    if(deleted)
+                    {
+                        queues = [service getQueues];
+                        NSIndexPath *path = [NSIndexPath indexPathForRow:[deleteQueueIndex integerValue] inSection:0];
+                        [self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+                    }
+                    else
+                    {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete failed"
+                                                                        message:@"Attempted to delete the queue from the server but it failed"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+                        [alert show];
+                    }
+                }
+                break;
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        deleteQueueIndex = [NSNumber numberWithInteger:indexPath.row];
+        NSString *queueName = [[queues objectAtIndex:indexPath.row] objectForKey:QUEUE_NAME];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?"
+                                                        message:[NSString stringWithFormat:@"Are you sure you want to delete the %@ queue?  Once it's gone, it's gone!", queueName]
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:@"Cancel", nil];
+        
+        [alert setTag:0];
+        [alert show];    
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }   
+}
 
 /*
 // Override to support rearranging the table view.
