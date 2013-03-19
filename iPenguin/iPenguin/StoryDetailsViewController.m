@@ -16,12 +16,16 @@
 @implementation StoryDetailsViewController
 
 #define CELL_CONTENT_WIDTH 300.0f
-#define CELL_CONTENT_MARGIN 15.0f
+#define CELL_CONTENT_MARGIN 25.0f
 
-@synthesize storyId;
+@synthesize storyId, queueId;
 
-PenguinServiceImpl *service;
-NSDictionary *storyDetails;
+NSObject<PenguinService> *service;
+NSMutableDictionary *storyDetailsViewModel;
+
+UITextField *storyReferenceField;
+UITextField *storyAuthorField;
+UITextView *storyTitleField;
 
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -48,13 +52,45 @@ NSDictionary *storyDetails;
 
 -(void)viewWillAppear:(BOOL)animated
 {
-    storyDetails = [service getStoryDetailsForStory:storyId];
+    if(storyId == nil)
+    {
+        storyDetailsViewModel = [NSMutableDictionary new];
+    }
+    else
+    {
+        storyDetailsViewModel = [NSMutableDictionary dictionaryWithDictionary:[service getStoryDetailsForStory:storyId]]; 
+    }
+       
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - UITextFieldDelegate methods
+
+- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
+{
+    return YES;
+}
+
+- (BOOL)textFieldShouldReturn: (UITextField *)textField{
+	[textField resignFirstResponder];
+	return YES;
+}
+
+#pragma mark - UITextViewDelegate methods
+
+- (BOOL)textViewShouldEndEditing:(UITextView *)textView
+{
+    return YES;
+}
+
+- (BOOL)textViewShouldReturn: (UITextView *)textView{
+	[textView resignFirstResponder];
+	return YES;
 }
 
 #pragma mark - Table view data source
@@ -86,13 +122,29 @@ NSDictionary *storyDetails;
     switch ([indexPath section])
     {
         case 0:
-            cell.textLabel.text = [storyDetails objectForKey:STORY_REFERENCE];
+            storyReferenceField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
+            [storyReferenceField setEnabled:YES];
+            [storyReferenceField setReturnKeyType:UIReturnKeyDone];
+            [storyReferenceField setPlaceholder:@"Please enter a reference"];
+            [storyReferenceField setText:[storyDetailsViewModel objectForKey:STORY_REFERENCE]];
+            [storyReferenceField setFont:[UIFont boldSystemFontOfSize:18]];
+            [storyReferenceField setDelegate:self];
+            
+            [cell.contentView addSubview:storyReferenceField];
             break;
         case 1:
-            cell.textLabel.text = [storyDetails objectForKey:STORY_AUTHOR];
+            storyAuthorField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
+            [storyAuthorField setEnabled:YES];
+            [storyAuthorField setReturnKeyType:UIReturnKeyDone];
+            [storyAuthorField setPlaceholder:@"Please enter an author"];
+            [storyAuthorField setText:[storyDetailsViewModel objectForKey:STORY_AUTHOR]];
+            [storyAuthorField setFont:[UIFont boldSystemFontOfSize:18]];
+            [storyAuthorField setDelegate:self];
+
+            [cell.contentView addSubview:storyAuthorField];
             break;
         case 2:
-            if([[storyDetails objectForKey:STORY_MERGE] boolValue] == YES)
+            if([[storyDetailsViewModel objectForKey:STORY_MERGE] boolValue] == YES)
             {
                 cell.textLabel.text = @"Story merged";
                 cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -106,7 +158,14 @@ NSDictionary *storyDetails;
             
             break;
         case 3:
-            cell.textLabel.text = [storyDetails objectForKey:STORY_TITLE];
+            storyTitleField = [[UITextView alloc] initWithFrame:CGRectMake(10, 0, 280, [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]] - 10)];
+            [storyTitleField setReturnKeyType:UIReturnKeyDone];
+            [storyTitleField setText:[storyDetailsViewModel objectForKey:STORY_TITLE]];
+            [storyTitleField setFont:[UIFont boldSystemFontOfSize:18]];
+            [storyTitleField setDelegate:self];
+            
+            [cell.contentView addSubview:storyTitleField];
+            
             cell.textLabel.numberOfLines = 0;
             break;
     }
@@ -121,16 +180,16 @@ NSDictionary *storyDetails;
     switch ([indexPath section])
     {
         case 0:
-            text = [storyDetails objectForKey:STORY_REFERENCE];
+            text = [storyDetailsViewModel objectForKey:STORY_REFERENCE];
             break;
         case 1:
-            text = [storyDetails objectForKey:STORY_AUTHOR];
+            text = [storyDetailsViewModel objectForKey:STORY_AUTHOR];
             break;
         case 2:
             text = @"1";
             break;
         case 3:
-            text = [storyDetails objectForKey:STORY_TITLE];
+            text = [storyDetailsViewModel objectForKey:STORY_TITLE];
             break;
     }
     
@@ -142,6 +201,10 @@ NSDictionary *storyDetails;
     
     if(size.height / lineSize.height > 1)
     {
+        if([indexPath section] == 3)
+        {
+            [storyTitleField setFrame:CGRectMake(10, 10, 280, size.height + (CELL_CONTENT_MARGIN * 2))];
+        }
         return size.height + (CELL_CONTENT_MARGIN * 2);
     }
     return 44.0f;
@@ -212,13 +275,86 @@ NSDictionary *storyDetails;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (indexPath.section == 2 && storyId != nil)
+    {
+        BOOL merged = [[storyDetailsViewModel objectForKey:STORY_MERGE] boolValue];
+        [storyDetailsViewModel setValue:storyReferenceField.text forKey:STORY_REFERENCE];
+        [storyDetailsViewModel setValue:storyAuthorField.text forKey:STORY_AUTHOR];
+        [storyDetailsViewModel setValue:storyTitleField.text forKey:STORY_TITLE];
+        [storyDetailsViewModel setValue:[NSNumber numberWithBool:!merged] forKey:STORY_MERGE];
+        [self.tableView reloadData];
+    }
+
+}
+
+-(CGFloat) tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    
+    if(section == 3)
+    {
+        return 200;
+    }
+    return UITableViewAutomaticDimension;
+}
+
+#pragma IBActions
+
+-(void)save:(id)sender
+{
+    BOOL refPresent = ![storyReferenceField.text isEqualToString:@""];
+    BOOL authorPresent = ![storyAuthorField.text isEqualToString:@""];
+    BOOL titlePresent = ![storyTitleField.text isEqualToString:@""];
+    
+    if(refPresent && authorPresent && titlePresent)
+    {
+        NSArray *keys = [NSArray arrayWithObjects:STORY_REFERENCE, STORY_TITLE, STORY_AUTHOR, nil];
+        NSArray *objects = [NSArray arrayWithObjects:storyReferenceField.text, storyTitleField.text, storyAuthorField.text, nil];
+        NSDictionary *model = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
+        
+        if(storyId == nil)
+        {
+            BOOL saved = [service createStory:model InQueue:queueId];
+            if(!saved)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
+                                                                message:@"Attempted to create the queue on the server but it failed, you may try again"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            else
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }
+        else
+        {
+            BOOL saved = [service updateStory:storyId WithDetails:model InQueue:queueId WithMergeStatus:[[storyDetailsViewModel objectForKey:STORY_MERGE] boolValue]];
+            if(!saved)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
+                                                                message:@"Attempted to update the queue on the server but it failed, you may try again"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            else
+            {
+                [self.navigationController popViewControllerAnimated:YES];
+            }
+        }
+    }
+    else
+    {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
+                                                        message:@"Please provide a reference, author and description"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        [alert show];
+    }
+    
 }
 
 @end

@@ -17,10 +17,10 @@
 
 @implementation StoryViewController
 
-@synthesize queue;
+@synthesize queueId;
 
 NSArray *stories;
-PenguinServiceImpl *service;
+NSObject<PenguinService> *service;
 
 UIView *loadingView;
 UILabel *loadingLabel;
@@ -65,13 +65,13 @@ UILabel *loadingLabel;
 {
     if([service shouldShowMerged] == YES)
     {
-        stories = [service getStoriesForQueue:queue];
+        stories = [service getStoriesForQueue:queueId];
     }
     else
     {
-        stories = [service getStoriesPendingMergeForQueue:queue];
+        stories = [service getStoriesPendingMergeForQueue:queueId];
     }
-
+    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -81,9 +81,19 @@ UILabel *loadingLabel;
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     
-    [segue.destinationViewController setStoryId:[[stories objectAtIndex:[indexPath row]] objectForKey:STORY_ID]];
+    if([segue.identifier isEqualToString:@"existing"])
+    {
+        NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+    
+        [segue.destinationViewController setStoryId:[[stories objectAtIndex:[indexPath row]] objectForKey:STORY_ID]];
+    }
+    if ([segue.identifier isEqualToString:@"new"])
+    {
+        [segue.destinationViewController setStoryId:nil];
+    }
+
+    [segue.destinationViewController setQueueId:queueId];
 }
 
 #pragma mark - Table view data source

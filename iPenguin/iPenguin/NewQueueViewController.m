@@ -18,7 +18,7 @@
 @synthesize saveButton, navBar;
 
 PenguinServiceImpl *service;
-UITextField *textField;
+UITextField *queueNameField;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -49,13 +49,13 @@ UITextField *textField;
 
 -(IBAction)save:(id)sender
 {
-    if(![textField.text isEqualToString:@""])
+    if(![queueNameField.text isEqualToString:@""])
     {
-        BOOL saved = [service createQueue:textField.text];
+        BOOL saved = [service createQueue:queueNameField.text];
         if(!saved)
         {
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
-                                                        message:@"Attempted to create the queue on the server but it failed"
+                                                        message:@"Attempted to create the queue on the server but it failed, you may try again"
                                                        delegate:nil
                                               cancelButtonTitle:@"OK"
                                               otherButtonTitles:nil];
@@ -95,14 +95,13 @@ UITextField *textField;
     static NSString *CellIdentifier = @"NewQueueCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    textField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
-    [textField setEnabled:YES];
-    [textField setReturnKeyType:UIReturnKeyDone];
-    [textField setPlaceholder:@"Please enter a queue name"];
-    [textField setDelegate:self];
+    queueNameField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
+    [queueNameField setEnabled:YES];
+    [queueNameField setReturnKeyType:UIReturnKeyDone];
+    [queueNameField setPlaceholder:@"Please enter a queue name"];
+    [queueNameField setDelegate:self];
     
-    [cell.contentView addSubview:textField];
-    // Configure the cell...
+    [cell.contentView addSubview:queueNameField];
     
     return cell;
 }

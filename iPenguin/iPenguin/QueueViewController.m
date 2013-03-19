@@ -8,10 +8,7 @@
 
 #import "QueueViewController.h"
 #import "StoryViewController.h"
-#import "PenguinService.h"
 #import "PenguinServiceImpl.h"
-
-#
 
 @interface QueueViewController ()
 
@@ -21,7 +18,7 @@
 
 NSArray *queues;
 NSNumber *deleteQueueIndex;
-PenguinServiceImpl *service;
+NSObject<PenguinService> *service;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -69,7 +66,7 @@ PenguinServiceImpl *service;
     {
         NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
     
-        [segue.destinationViewController setQueue:[[queues objectAtIndex:[indexPath row]] objectForKey:QUEUE_ID]];
+        [segue.destinationViewController setQueueId:[[queues objectAtIndex:[indexPath row]] objectForKey:QUEUE_ID]];
     }
 }
 

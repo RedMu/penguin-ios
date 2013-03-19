@@ -27,4 +27,8 @@
 -(BOOL)deleteQueue:(NSString *)queueId;
 -(BOOL)createQueue:(NSString *)queueName;
 
+-(BOOL)createStory:(NSDictionary *)storyDetails InQueue:(NSString *)queueId;
+-(BOOL)updateStory:(NSString *)storyId WithDetails:(NSDictionary *)storyDetails InQueue:(NSString *)queueId WithMergeStatus:(BOOL)merged;
+-(BOOL)deleteStory:(NSString *)storyId ForQueue:(NSString *)queueId;
+
 @end

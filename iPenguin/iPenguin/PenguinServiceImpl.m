@@ -65,7 +65,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     NSError *requestError;
     NSHTTPURLResponse *urlResponse = nil;
     
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
     if([urlResponse statusCode] == 204)
     {
@@ -94,7 +94,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     NSError *requestError;
     NSHTTPURLResponse *urlResponse = nil;
     
-    NSData *responseData = [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
     if([urlResponse statusCode] == 201)
     {
@@ -225,5 +225,101 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     [NSException raise:@"Story not found" format:@"Story with id %@ could not be found", storyId];
     return nil;
 }
+
+-(BOOL)createStory:(NSDictionary *)storyDetails InQueue:(NSString *)queueId
+{
+    
+    NSString *identifierPrefix = @"/api/queue/";
+    NSString *identifier = [[identifierPrefix stringByAppendingString:queueId] stringByAppendingString:@"/stories"];
+    
+    NSString *url = [[self getURL] stringByAppendingString:identifier];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"POST"];
+    
+    NSError *error;
+    NSData *body = [NSJSONSerialization dataWithJSONObject:storyDetails
+                                                       options:0
+                                                         error:&error];
+    
+    
+    [request setHTTPBody:body];
+    [request setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *requestError;
+    NSHTTPURLResponse *urlResponse = nil;
+    
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    
+    NSLog(@"STATUS %i", [urlResponse statusCode]);
+    
+    if([urlResponse statusCode] == 201)
+    {
+        return YES;
+    }
+    return NO;
+}
+
+-(BOOL)updateStory:(NSString *)storyId WithDetails:(NSDictionary *)storyDetails InQueue:(NSString *)queueId WithMergeStatus:(BOOL)merged
+{
+    NSString *identifierPrefix = @"/api/queue/";
+    NSString *identifier = [[[identifierPrefix stringByAppendingString:queueId] stringByAppendingString:@"/story/"] stringByAppendingString:storyId];
+    
+    NSString *url = [[self getURL] stringByAppendingString:identifier];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"PUT"];
+    
+    NSError *error;
+    NSData *body = [NSJSONSerialization dataWithJSONObject:storyDetails
+                                                   options:0
+                                                     error:&error];
+    
+    
+    [request setHTTPBody:body];
+    [request setValue:@"application/json; charset=UTF-8" forHTTPHeaderField:@"Content-Type"];
+    
+    NSError *requestError;
+    NSHTTPURLResponse *urlResponse = nil;
+    
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    
+    NSLog(@"STATUS %i", [urlResponse statusCode]);
+    
+    ////////////MERGE STATUS//////////////////
+    
+    NSString *merge = merged ? @"/merge" : @"/unmerge";
+    
+    NSString *mergeUrl = [url stringByAppendingString:merge];
+    
+    NSLog(mergeUrl);
+    
+    NSMutableURLRequest *mergeRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:mergeUrl]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [mergeRequest setHTTPMethod: @"POST"];
+    
+    NSHTTPURLResponse *mergeResponse = nil;
+    
+    [NSURLConnection sendSynchronousRequest:mergeRequest returningResponse:&mergeResponse error:nil];
+    
+    
+    if([urlResponse statusCode] == 204 && [mergeResponse statusCode] == 204)
+    {
+        return YES;
+    }
+    return NO;
+}
+
+//-(BOOL)deleteStory:(NSString *)storyId ForQueue:(NSString *)queueId;
+
+
 
 @end

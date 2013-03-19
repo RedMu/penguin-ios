@@ -10,7 +10,7 @@
 
 @interface StoryViewController : UITableViewController
 
-@property (strong, nonatomic) NSString *queue;
+@property (strong, nonatomic) NSString *queueId;
 
 
 @end

@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface StoryDetailsViewController : UITableViewController
+@interface StoryDetailsViewController : UITableViewController <UITextFieldDelegate, UITextViewDelegate>
 
 @property (strong, nonatomic) NSString *storyId;
+@property (strong, nonatomic) NSString *queueId;
+
+-(IBAction)save:(id)sender;
 
 @end
