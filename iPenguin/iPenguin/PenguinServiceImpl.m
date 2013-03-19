@@ -254,8 +254,6 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     
     [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
-    NSLog(@"STATUS %i", [urlResponse statusCode]);
-    
     if([urlResponse statusCode] == 201)
     {
         return YES;
@@ -290,15 +288,16 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     
     [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
     
-    NSLog(@"STATUS %i", [urlResponse statusCode]);
-    
+    if([urlResponse statusCode] != 204)
+    {
+        return NO;
+    }
+      
     ////////////MERGE STATUS//////////////////
     
     NSString *merge = merged ? @"/merge" : @"/unmerge";
     
     NSString *mergeUrl = [url stringByAppendingString:merge];
-    
-    NSLog(mergeUrl);
     
     NSMutableURLRequest *mergeRequest = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:mergeUrl]
                                                            cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
@@ -311,11 +310,11 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     [NSURLConnection sendSynchronousRequest:mergeRequest returningResponse:&mergeResponse error:nil];
     
     
-    if([urlResponse statusCode] == 204 && [mergeResponse statusCode] == 204)
+    if([mergeResponse statusCode] != 204)
     {
-        return YES;
+        return NO;
     }
-    return NO;
+    return YES;
 }
 
 //-(BOOL)deleteStory:(NSString *)storyId ForQueue:(NSString *)queueId;
