@@ -10,8 +10,8 @@ Current features:
 
 - View queues 
 	- count of stories pending merge
-        - swipe to delete queues
-        - add new queues
+	- swipe to delete queues
+	- add new queues
 
 - View stories
         - story reference and author shown, merged items shown with tick  
