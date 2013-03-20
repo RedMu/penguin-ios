@@ -60,7 +60,7 @@ UITextView *storyTitleField;
     {
         storyDetailsViewModel = [NSMutableDictionary dictionaryWithDictionary:[service getStoryDetailsForStory:storyId]]; 
     }
-       
+    self.navigationItem.title = [storyDetailsViewModel objectForKey:STORY_REFERENCE];
 }
 
 - (void)didReceiveMemoryWarning
