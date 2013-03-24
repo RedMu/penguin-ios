@@ -168,7 +168,7 @@ UITextView *storyTitleField;
             
             break;
         case 3:
-            storyTitleField = [[UITextView alloc] initWithFrame:CGRectMake(10, 0, 280, [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]] - 10)];
+            storyTitleField = [[UITextView alloc] initWithFrame:CGRectMake(10, 0, 280, [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]] - 3)];
             [storyTitleField setReturnKeyType:UIReturnKeyDone];
             [storyTitleField setText:[storyDetailsViewModel objectForKey:STORY_TITLE]];
             [storyTitleField setFont:[UIFont boldSystemFontOfSize:18]];
@@ -211,10 +211,6 @@ UITextView *storyTitleField;
     
     if(size.height / lineSize.height > 1)
     {
-        if([indexPath section] == 3)
-        {
-            [storyTitleField setFrame:CGRectMake(10, 10, 280, size.height + (CELL_CONTENT_MARGIN * 2))];
-        }
         return size.height + (CELL_CONTENT_MARGIN * 2);
     }
     return 44.0f;

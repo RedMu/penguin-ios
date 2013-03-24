@@ -422,11 +422,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/StoryDetailsViewController.m"
-         timestampString = "385430564.274639"
+         timestampString = "385501968.495815"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "291"
-         endingLineNumber = "291"
+         startingLineNumber = "287"
+         endingLineNumber = "287"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -435,11 +435,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "iPenguin/StoryDetailsViewController.m"
-         timestampString = "385430564.274639"
+         timestampString = "385501968.495815"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "288"
-         endingLineNumber = "288"
+         startingLineNumber = "284"
+         endingLineNumber = "284"
          landmarkName = "-tableView:didSelectRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -506,6 +506,32 @@
          startingLineNumber = "268"
          endingLineNumber = "268"
          landmarkName = "-updateStory:WithDetails:InQueue:WithMergeStatus:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iPenguin/StoryDetailsViewController.m"
+         timestampString = "385828478.427101"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "171"
+         endingLineNumber = "171"
+         landmarkName = "-tableView:cellForRowAtIndexPath:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "iPenguin/StoryDetailsViewController.m"
+         timestampString = "385828488.511201"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "202"
+         endingLineNumber = "202"
+         landmarkName = "-tableView:heightForRowAtIndexPath:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

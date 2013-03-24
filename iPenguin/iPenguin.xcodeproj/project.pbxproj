@@ -86,8 +86,8 @@
 		60E51AC916F13257008CBE7C /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		60E51ACE16F13517008CBE7C /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
 		60E51ACF16F13517008CBE7C /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
-		60E51AD516F14121008CBE7C /* penguin114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin114.png; sourceTree = "<group>"; };
-		60E51AD716F14152008CBE7C /* penguin57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = penguin57.png; sourceTree = "<group>"; };
+		60E51AD516F14121008CBE7C /* penguin114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = penguin114.png; path = ../penguin114.png; sourceTree = "<group>"; };
+		60E51AD716F14152008CBE7C /* penguin57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = penguin57.png; path = ../penguin57.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,9 +118,6 @@
 		606B2E2216DC148200B75A63 = {
 			isa = PBXGroup;
 			children = (
-				600E7FDF16F401C100E4C93B /* QuartzCore.framework */,
-				60E51AD716F14152008CBE7C /* penguin57.png */,
-				60E51AD516F14121008CBE7C /* penguin114.png */,
 				606B2E3716DC148200B75A63 /* iPenguin */,
 				606B2E5E16DC148200B75A63 /* iPenguinTests */,
 				606B2E3016DC148200B75A63 /* Frameworks */,
@@ -140,6 +137,7 @@
 		606B2E3016DC148200B75A63 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				600E7FDF16F401C100E4C93B /* QuartzCore.framework */,
 				606B2E3116DC148200B75A63 /* UIKit.framework */,
 				606B2E3316DC148200B75A63 /* Foundation.framework */,
 				606B2E3516DC148200B75A63 /* CoreGraphics.framework */,
@@ -151,8 +149,7 @@
 		606B2E3716DC148200B75A63 /* iPenguin */ = {
 			isa = PBXGroup;
 			children = (
-				60E51AC916F13257008CBE7C /* 33-cabinet.png */,
-				60E51AC616F13206008CBE7C /* 20-gear2.png */,
+				60C939C616FF45B1000F41EF /* images */,
 				606B2E4016DC148200B75A63 /* AppDelegate.h */,
 				606B2E4116DC148200B75A63 /* AppDelegate.m */,
 				606B2E4916DC148200B75A63 /* MainStoryboard_iPhone.storyboard */,
@@ -206,6 +203,33 @@
 				606B2E6116DC148200B75A63 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60C939C616FF45B1000F41EF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				60C939C816FF45C3000F41EF /* icon */,
+				60C939C716FF45BA000F41EF /* tab */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		60C939C716FF45BA000F41EF /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				60E51AC916F13257008CBE7C /* 33-cabinet.png */,
+				60E51AC616F13206008CBE7C /* 20-gear2.png */,
+			);
+			name = tab;
+			sourceTree = "<group>";
+		};
+		60C939C816FF45C3000F41EF /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				60E51AD716F14152008CBE7C /* penguin57.png */,
+				60E51AD516F14121008CBE7C /* penguin114.png */,
+			);
+			name = icon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
