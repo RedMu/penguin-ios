@@ -35,7 +35,12 @@ NSObject<PenguinService> *service;
     [super viewDidLoad];
     
     service = [[PenguinServiceImpl alloc] init];
+    
+    //Accessibility labels
+    self.tableView.accessibilityLabel = @"Queues";
 
+    UIView *view = [self.parentViewController.toolbarItems objectAtIndex:0];
+    [view setAccessibilityLabel:@"Add Queue"];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -88,8 +93,6 @@ NSObject<PenguinService> *service;
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
     return 1;
 }
 

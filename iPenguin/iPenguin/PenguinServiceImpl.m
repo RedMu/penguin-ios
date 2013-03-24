@@ -23,6 +23,8 @@ NSString *const STORY_MERGE = @"merged";
 
 NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
+static const int LOAD_DELAY = 0;
+
 #pragma mark - Configuration methods
 
 -(BOOL)isAvailable
@@ -56,6 +58,10 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)deleteQueue:(NSString *)queueId
 {
+    for (int i=0; i<LOAD_DELAY; i++) {
+        NSLog(@"Delete queue %@", queueId);
+    }
+    
     NSString *identifier = [NSString stringWithFormat:@"/api/queue/%@", queueId];
     
     NSString *url = [[self getURL] stringByAppendingString:identifier];
@@ -80,7 +86,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)createQueue:(NSString *)queueName
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Create queues");
     }
     
@@ -113,7 +119,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSArray *)getQueues
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Get queues");
     }
     
@@ -151,7 +157,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSArray *)getStoriesForQueue:(NSString *)queueId
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Stories for queue %@", queueId);
     }
     
@@ -184,7 +190,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSArray *)getStoriesPendingMergeForQueue:(NSString *)queueId
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Stories pending merge for queue %@", queueId);
     }
     
@@ -220,7 +226,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSDictionary *)getStoryDetailsForStory:(NSString *)storyId
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Story details for story %@", storyId);
     }
     
@@ -253,7 +259,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)createStory:(NSDictionary *)storyDetails InQueue:(NSString *)queueId
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Create story in queue %@", queueId);
     }
     
@@ -291,7 +297,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)updateStory:(NSString *)storyId WithDetails:(NSDictionary *)storyDetails InQueue:(NSString *)queueId WithMergeStatus:(BOOL)merged
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Update story %@ in queue %@", storyId, queueId);
     }
     
@@ -351,7 +357,7 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)deleteStory:(NSString *)storyId ForQueue:(NSString *)queueId
 {
-    for (int i=0; i<5000; i++) {
+    for (int i=0; i<LOAD_DELAY; i++) {
         NSLog(@"Delete story %@ in queue %@", storyId, queueId);
     }
     
