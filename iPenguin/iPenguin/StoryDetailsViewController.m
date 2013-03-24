@@ -8,6 +8,7 @@
 
 #import "StoryDetailsViewController.h"
 #import "PenguinServiceImpl.h"
+#import "LoadingIndicator.h"
 
 @interface StoryDetailsViewController ()
 
@@ -50,17 +51,30 @@ UITextView *storyTitleField;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
-    if(storyId == nil)
-    {
-        storyDetailsViewModel = [NSMutableDictionary new];
-    }
-    else
-    {
-        storyDetailsViewModel = [NSMutableDictionary dictionaryWithDictionary:[service getStoryDetailsForStory:storyId]]; 
-    }
-    self.navigationItem.title = [storyDetailsViewModel objectForKey:STORY_REFERENCE];
+    LoadingIndicator *loadingIndicator = [[LoadingIndicator alloc] init];
+    [self.view addSubview:loadingIndicator];
+    
+    storyReferenceField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
+    storyAuthorField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
+    storyTitleField = [[UITextView alloc] initWithFrame:CGRectMake(10, 0, 280, [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]] - 3)];
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        
+        if(storyId == nil)
+        {
+            storyDetailsViewModel = [NSMutableDictionary new];
+        }
+        else
+        {
+            storyDetailsViewModel = [NSMutableDictionary dictionaryWithDictionary:[service getStoryDetailsForStory:storyId]];
+        }
+
+        self.navigationItem.title = [storyDetailsViewModel objectForKey:STORY_REFERENCE];
+        [self.tableView reloadData];
+        [loadingIndicator removeFromSuperview];
+    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,7 +136,9 @@ UITextView *storyTitleField;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"StoryDetailCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    //Given the small number of rows - just create cells to save messing around with old data
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"notimportant"];
+    //[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
     cell.textLabel.numberOfLines = 1;
@@ -131,11 +147,9 @@ UITextView *storyTitleField;
     
     switch ([indexPath section])
     {
-        case 0:
-            storyReferenceField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
+        case 0:            
             [storyReferenceField setEnabled:YES];
             [storyReferenceField setReturnKeyType:UIReturnKeyDone];
-            [storyReferenceField setPlaceholder:@"Please enter a reference"];
             [storyReferenceField setText:[storyDetailsViewModel objectForKey:STORY_REFERENCE]];
             [storyReferenceField setFont:[UIFont boldSystemFontOfSize:18]];
             [storyReferenceField setDelegate:self];
@@ -143,10 +157,8 @@ UITextView *storyTitleField;
             [cell.contentView addSubview:storyReferenceField];
             break;
         case 1:
-            storyAuthorField = [[UITextField alloc] initWithFrame:CGRectMake(10, 10, 280, 30)];
             [storyAuthorField setEnabled:YES];
             [storyAuthorField setReturnKeyType:UIReturnKeyDone];
-            [storyAuthorField setPlaceholder:@"Please enter an author"];
             [storyAuthorField setText:[storyDetailsViewModel objectForKey:STORY_AUTHOR]];
             [storyAuthorField setFont:[UIFont boldSystemFontOfSize:18]];
             [storyAuthorField setDelegate:self];
@@ -168,6 +180,7 @@ UITextView *storyTitleField;
             
             break;
         case 3:
+            //Required to redraw cell here as it maybe the case that there is more than one line of text after loading.
             storyTitleField = [[UITextView alloc] initWithFrame:CGRectMake(10, 0, 280, [self tableView:self.tableView heightForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:3]] - 3)];
             [storyTitleField setReturnKeyType:UIReturnKeyDone];
             [storyTitleField setText:[storyDetailsViewModel objectForKey:STORY_TITLE]];
@@ -316,40 +329,47 @@ UITextView *storyTitleField;
         NSArray *objects = [NSArray arrayWithObjects:storyReferenceField.text, storyTitleField.text, storyAuthorField.text, nil];
         NSDictionary *model = [NSDictionary dictionaryWithObjects:objects forKeys:keys];
         
-        if(storyId == nil)
-        {
-            BOOL saved = [service createStory:model InQueue:queueId];
-            if(!saved)
+        LoadingIndicator *loadingIndicator = [[LoadingIndicator alloc] init];
+        [self.view addSubview:loadingIndicator];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+                    
+            if(storyId == nil)
             {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
-                                                                message:@"Attempted to create the queue on the server but it failed, you may try again"
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
+                BOOL saved = [service createStory:model InQueue:queueId];
+                if(!saved)
+                {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
+                                                                    message:@"Attempted to create the queue on the server but it failed, you may try again"
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                }
+                else
+                {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
             }
             else
             {
-                [self.navigationController popViewControllerAnimated:YES];
+                BOOL saved = [service updateStory:storyId WithDetails:model InQueue:queueId WithMergeStatus:[[storyDetailsViewModel objectForKey:STORY_MERGE] boolValue]];
+                if(!saved)
+                {
+                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
+                                                                    message:@"Attempted to update the queue on the server but it failed, you may try again"
+                                                                   delegate:nil
+                                                          cancelButtonTitle:@"OK"
+                                                          otherButtonTitles:nil];
+                    [alert show];
+                }
+                else
+                {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }
             }
-        }
-        else
-        {
-            BOOL saved = [service updateStory:storyId WithDetails:model InQueue:queueId WithMergeStatus:[[storyDetailsViewModel objectForKey:STORY_MERGE] boolValue]];
-            if(!saved)
-            {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
-                                                                message:@"Attempted to update the queue on the server but it failed, you may try again"
-                                                               delegate:nil
-                                                      cancelButtonTitle:@"OK"
-                                                      otherButtonTitles:nil];
-                [alert show];
-            }
-            else
-            {
-                [self.navigationController popViewControllerAnimated:YES];
-            }
-        }
+            [loadingIndicator removeFromSuperview];
+        });
     }
     else
     {

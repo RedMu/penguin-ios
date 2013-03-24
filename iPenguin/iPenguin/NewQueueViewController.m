@@ -8,6 +8,7 @@
 
 #import "NewQueueViewController.h"
 #import "PenguinServiceImpl.h"
+#import "LoadingIndicator.h"
 
 @interface NewQueueViewController ()
 
@@ -51,20 +52,26 @@ UITextField *queueNameField;
 {
     if(![queueNameField.text isEqualToString:@""])
     {
-        BOOL saved = [service createQueue:queueNameField.text];
-        if(!saved)
-        {
-            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
-                                                        message:@"Attempted to create the queue on the server but it failed, you may try again"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-            [alert show];
-        }
-        else
-        {
-            [self dismissViewControllerAnimated:YES completion:nil];
-        }
+        LoadingIndicator *loadingIndicator = [[LoadingIndicator alloc] init];
+        [self.view addSubview:loadingIndicator];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            BOOL saved = [service createQueue:queueNameField.text];
+            if(!saved)
+            {
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Save failed"
+                                                                message:@"Attempted to create the queue on the server but it failed, you may try again"
+                                                               delegate:nil
+                                                      cancelButtonTitle:@"OK"
+                                                      otherButtonTitles:nil];
+                [alert show];
+            }
+            else
+            {
+                [self dismissViewControllerAnimated:YES completion:nil];
+            }
+        });
     }
 }
 

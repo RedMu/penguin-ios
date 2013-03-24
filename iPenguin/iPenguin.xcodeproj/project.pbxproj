@@ -31,6 +31,8 @@
 		6090577D16F7C3A000CAB91C /* NewQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090577C16F7C3A000CAB91C /* NewQueueViewController.m */; };
 		6090577E16F7C3A000CAB91C /* NewQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090577C16F7C3A000CAB91C /* NewQueueViewController.m */; };
 		60B3132816F122F90040BD92 /* StoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B3132716F122F90040BD92 /* StoryDetailsViewController.m */; };
+		60C939D216FF4FC5000F41EF /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C939D116FF4FC5000F41EF /* LoadingIndicator.m */; };
+		60C939D316FF4FC5000F41EF /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C939D116FF4FC5000F41EF /* LoadingIndicator.m */; };
 		60E51AC716F13206008CBE7C /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC616F13206008CBE7C /* 20-gear2.png */; };
 		60E51ACA16F13257008CBE7C /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC916F13257008CBE7C /* 33-cabinet.png */; };
 		60E51AD016F13517008CBE7C /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E51ACF16F13517008CBE7C /* ConfigViewController.m */; };
@@ -82,6 +84,8 @@
 		6090577C16F7C3A000CAB91C /* NewQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewQueueViewController.m; sourceTree = "<group>"; };
 		60B3132616F122F90040BD92 /* StoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryDetailsViewController.h; sourceTree = "<group>"; };
 		60B3132716F122F90040BD92 /* StoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryDetailsViewController.m; sourceTree = "<group>"; };
+		60C939D016FF4FC5000F41EF /* LoadingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingIndicator.h; sourceTree = "<group>"; };
+		60C939D116FF4FC5000F41EF /* LoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingIndicator.m; sourceTree = "<group>"; };
 		60E51AC616F13206008CBE7C /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
 		60E51AC916F13257008CBE7C /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
 		60E51ACE16F13517008CBE7C /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
@@ -149,6 +153,8 @@
 		606B2E3716DC148200B75A63 /* iPenguin */ = {
 			isa = PBXGroup;
 			children = (
+				60C939CE16FF4F9C000F41EF /* Utils */,
+				60C939CA16FF4F27000F41EF /* PenguinControllers */,
 				60C939C916FF4981000F41EF /* service */,
 				60C939C616FF45B1000F41EF /* images */,
 				606B2E4016DC148200B75A63 /* AppDelegate.h */,
@@ -156,16 +162,6 @@
 				606B2E4916DC148200B75A63 /* MainStoryboard_iPhone.storyboard */,
 				606B2E4C16DC148200B75A63 /* MainStoryboard_iPad.storyboard */,
 				606B2E3816DC148200B75A63 /* Supporting Files */,
-				606B2E6F16DC169A00B75A63 /* QueueViewController.h */,
-				606B2E7016DC169A00B75A63 /* QueueViewController.m */,
-				606B2E7216DC259200B75A63 /* StoryViewController.h */,
-				606B2E7316DC259200B75A63 /* StoryViewController.m */,
-				60B3132616F122F90040BD92 /* StoryDetailsViewController.h */,
-				60B3132716F122F90040BD92 /* StoryDetailsViewController.m */,
-				60E51ACE16F13517008CBE7C /* ConfigViewController.h */,
-				60E51ACF16F13517008CBE7C /* ConfigViewController.m */,
-				6090577B16F7C3A000CAB91C /* NewQueueViewController.h */,
-				6090577C16F7C3A000CAB91C /* NewQueueViewController.m */,
 			);
 			path = iPenguin;
 			sourceTree = "<group>";
@@ -238,6 +234,64 @@
 				600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */,
 			);
 			name = service;
+			sourceTree = "<group>";
+		};
+		60C939CA16FF4F27000F41EF /* PenguinControllers */ = {
+			isa = PBXGroup;
+			children = (
+				60C939CD16FF4F4F000F41EF /* Config */,
+				60C939CC16FF4F4A000F41EF /* Stories */,
+				60C939CB16FF4F42000F41EF /* Queues */,
+			);
+			name = PenguinControllers;
+			sourceTree = "<group>";
+		};
+		60C939CB16FF4F42000F41EF /* Queues */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E6F16DC169A00B75A63 /* QueueViewController.h */,
+				606B2E7016DC169A00B75A63 /* QueueViewController.m */,
+				6090577B16F7C3A000CAB91C /* NewQueueViewController.h */,
+				6090577C16F7C3A000CAB91C /* NewQueueViewController.m */,
+			);
+			name = Queues;
+			sourceTree = "<group>";
+		};
+		60C939CC16FF4F4A000F41EF /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E7216DC259200B75A63 /* StoryViewController.h */,
+				606B2E7316DC259200B75A63 /* StoryViewController.m */,
+				60B3132616F122F90040BD92 /* StoryDetailsViewController.h */,
+				60B3132716F122F90040BD92 /* StoryDetailsViewController.m */,
+			);
+			name = Stories;
+			sourceTree = "<group>";
+		};
+		60C939CD16FF4F4F000F41EF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				60E51ACE16F13517008CBE7C /* ConfigViewController.h */,
+				60E51ACF16F13517008CBE7C /* ConfigViewController.m */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		60C939CE16FF4F9C000F41EF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				60C939CF16FF4FA2000F41EF /* Views */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		60C939CF16FF4FA2000F41EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60C939D016FF4FC5000F41EF /* LoadingIndicator.h */,
+				60C939D116FF4FC5000F41EF /* LoadingIndicator.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +417,7 @@
 				60E51AD016F13517008CBE7C /* ConfigViewController.m in Sources */,
 				600E7FDD16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */,
 				6090577D16F7C3A000CAB91C /* NewQueueViewController.m in Sources */,
+				60C939D216FF4FC5000F41EF /* LoadingIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +428,7 @@
 				606B2E6616DC148200B75A63 /* iPenguinTests.m in Sources */,
 				600E7FDE16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */,
 				6090577E16F7C3A000CAB91C /* NewQueueViewController.m in Sources */,
+				60C939D316FF4FC5000F41EF /* LoadingIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

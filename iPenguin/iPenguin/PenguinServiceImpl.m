@@ -80,6 +80,9 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)createQueue:(NSString *)queueName
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Create queues");
+    }
     
     NSString *identifier = @"/api/queues";
     
@@ -110,6 +113,10 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSArray *)getQueues
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Get queues");
+    }
+    
     NSString *url = [[self getURL] stringByAppendingString:@"/api/queues"];
     
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
@@ -144,6 +151,10 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSArray *)getStoriesForQueue:(NSString *)queueId
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Stories for queue %@", queueId);
+    }
+    
     NSString *url = [[self getURL] stringByAppendingString:@"/api/queues"];
     
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
@@ -173,6 +184,10 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSArray *)getStoriesPendingMergeForQueue:(NSString *)queueId
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Stories pending merge for queue %@", queueId);
+    }
+    
     NSString *url = [[self getURL] stringByAppendingString:@"/api/queues"];
     
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
@@ -205,6 +220,10 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(NSDictionary *)getStoryDetailsForStory:(NSString *)storyId
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Story details for story %@", storyId);
+    }
+    
     NSString *url = [[self getURL] stringByAppendingString:@"/api/queues"];
     
     NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:url]];
@@ -234,6 +253,9 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)createStory:(NSDictionary *)storyDetails InQueue:(NSString *)queueId
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Create story in queue %@", queueId);
+    }
     
     NSString *identifierPrefix = @"/api/queue/";
     NSString *identifier = [[identifierPrefix stringByAppendingString:queueId] stringByAppendingString:@"/stories"];
@@ -269,6 +291,10 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)updateStory:(NSString *)storyId WithDetails:(NSDictionary *)storyDetails InQueue:(NSString *)queueId WithMergeStatus:(BOOL)merged
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Update story %@ in queue %@", storyId, queueId);
+    }
+    
     NSString *identifierPrefix = @"/api/queue/";
     NSString *identifier = [[[identifierPrefix stringByAppendingString:queueId] stringByAppendingString:@"/story/"] stringByAppendingString:storyId];
     
@@ -325,6 +351,10 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
 -(BOOL)deleteStory:(NSString *)storyId ForQueue:(NSString *)queueId
 {
+    for (int i=0; i<5000; i++) {
+        NSLog(@"Delete story %@ in queue %@", storyId, queueId);
+    }
+    
     NSString *identifier = [NSString stringWithFormat:@"/api/queue/%@/story/%@", queueId, storyId];
     
     NSString *url = [[self getURL] stringByAppendingString:identifier];

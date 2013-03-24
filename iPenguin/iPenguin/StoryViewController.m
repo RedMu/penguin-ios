@@ -10,6 +10,7 @@
 #import "StoryDetailsViewController.h"
 #import "PenguinServiceImpl.h"
 #import <QuartzCore/QuartzCore.h>
+#import "LoadingIndicator.h"
 
 @interface StoryViewController ()
 
@@ -47,12 +48,13 @@ UILabel *loadingLabel;
     loadingView.clipsToBounds = YES;
     loadingView.layer.cornerRadius = 10.0;
     
-    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 25, 190, 22)];
+    loadingLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 15, 190, 50)];
     loadingLabel.backgroundColor = [UIColor clearColor];
     loadingLabel.textColor = [UIColor whiteColor];
     loadingLabel.adjustsFontSizeToFitWidth = YES;
     loadingLabel.textAlignment = UITextAlignmentCenter;
-    loadingLabel.text = @"Show/hide merged stories";
+    loadingLabel.numberOfLines = 2;
+    loadingLabel.lineBreakMode = UILineBreakModeWordWrap;
     [loadingView addSubview:loadingLabel];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -62,17 +64,29 @@ UILabel *loadingLabel;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
--(void)viewWillAppear:(BOOL)animated
+-(void)viewDidAppear:(BOOL)animated
 {
+    LoadingIndicator *loadingIndicator = [[LoadingIndicator alloc] init];
+    [self.view addSubview:loadingIndicator];
+    
     if([service shouldShowMerged] == YES)
     {
-        stories = [service getStoriesForQueue:queueId];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            stories = [service getStoriesForQueue:queueId];
+            [self.tableView reloadData];
+            [loadingIndicator removeFromSuperview];
+        });
     }
     else
     {
-        stories = [service getStoriesPendingMergeForQueue:queueId];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            stories = [service getStoriesPendingMergeForQueue:queueId];
+            [self.tableView reloadData];
+            [loadingIndicator removeFromSuperview];
+        });
     }
-    [self.tableView reloadData];
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,23 +148,45 @@ UILabel *loadingLabel;
 }
 
 - (IBAction)handlePinch:(UIPinchGestureRecognizer *)recognizer {
-    if(recognizer.state == UIGestureRecognizerStateBegan)
+    
+    switch (recognizer.state)
     {
-        [self.view addSubview:loadingView];
+        case UIGestureRecognizerStateBegan:
+            [self.view addSubview:loadingView];
+            break;
+
+        case UIGestureRecognizerStateChanged:
+            if(recognizer.scale > 1)
+            {
+                [loadingLabel setText:@"Show pending and merged stories"];
+            }
+            else
+            {
+                [loadingLabel setText:@"Show only stories pending merge"];
+            }
+            break;
+            
+        case UIGestureRecognizerStateEnded:
+            [loadingView removeFromSuperview];
+            if(recognizer.scale > 1)
+            {
+                [service setShouldShowMerged:YES];
+            }
+            else
+            {
+                [service setShouldShowMerged:NO];
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self viewDidAppear:YES];
+            });
+            break;
     }
+
+        
     if(recognizer.state == UIGestureRecognizerStateEnded)
     {
-        [loadingView removeFromSuperview];
-        if(recognizer.scale > 1)
-        {
-            [service setShouldShowMerged:YES];
-        }
-        else
-        {
-            [service setShouldShowMerged:NO];
-        }
-        [self viewWillAppear:YES];
-        [self.tableView reloadData];
+
     }
 }
 
@@ -168,26 +204,36 @@ UILabel *loadingLabel;
             switch (buttonIndex) {
                 case 0:
                 {
-                    NSString *storyId = [[stories objectAtIndex:[deleteStoryIndex integerValue]] objectForKey:STORY_ID];
-                    BOOL deleted = [service deleteStory:storyId ForQueue:queueId];
+                    LoadingIndicator *loadingIndicator = [[LoadingIndicator alloc] init];
+                    [self.view addSubview:loadingIndicator];
                     
-                    if(deleted)
-                    {
-                        stories = [service getStoriesForQueue:queueId];
-                        NSIndexPath *path = [NSIndexPath indexPathForRow:[deleteStoryIndex integerValue] inSection:0];
-                        [self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
-                    }
-                    else
-                    {
-                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete failed"
-                                                                        message:@"Attempted to delete the story from the server but it failed"
-                                                                       delegate:nil
-                                                              cancelButtonTitle:@"OK"
-                                                              otherButtonTitles:nil];
-                        [alert show];
-                    }
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        
+                        NSString *storyId = [[stories objectAtIndex:[deleteStoryIndex integerValue]] objectForKey:STORY_ID];
+                        BOOL deleted = [service deleteStory:storyId ForQueue:queueId];
+                        
+                        if(deleted)
+                        {
+                            stories = [service getStoriesForQueue:queueId];
+                            NSIndexPath *path = [NSIndexPath indexPathForRow:[deleteStoryIndex integerValue] inSection:0];
+                            [self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+                        }
+                        else
+                        {
+                            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete failed"
+                                                                            message:@"Attempted to delete the story from the server but it failed"
+                                                                           delegate:nil
+                                                                  cancelButtonTitle:@"OK"
+                                                                  otherButtonTitles:nil];
+                            [alert show];
+                        }
+                        
+                        [loadingIndicator removeFromSuperview];
+                        
+                    });
+                    
                 }
-                    break;
+                break;
             }
             break;
             

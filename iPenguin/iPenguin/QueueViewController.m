@@ -9,6 +9,7 @@
 #import "QueueViewController.h"
 #import "StoryViewController.h"
 #import "PenguinServiceImpl.h"
+#import "LoadingIndicator.h"
 
 @interface QueueViewController ()
 
@@ -37,7 +38,7 @@ NSObject<PenguinService> *service;
 
 }
 
-- (void) viewWillAppear:(BOOL)animated
+- (void) viewDidAppear:(BOOL)animated
 {
     if([service isAvailable] == NO)
     {
@@ -51,9 +52,16 @@ NSObject<PenguinService> *service;
     }
     else
     {
-        queues = [service getQueues];
+        LoadingIndicator *loadingIndicator = [[LoadingIndicator alloc] init];
+        [self.view addSubview:loadingIndicator];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            queues = [service getQueues];
+            [loadingIndicator removeFromSuperview];
+            [self.tableView reloadData];
+        });
     }
-    [self.tableView reloadData];
 }
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
@@ -172,6 +180,11 @@ NSObject<PenguinService> *service;
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
     }   
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSLog(@"ROW SELECTED!");
 }
 
 /*
