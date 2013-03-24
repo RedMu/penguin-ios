@@ -23,6 +23,8 @@ NSString *const STORY_MERGE = @"merged";
 
 NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
 
+#pragma mark - Configuration methods
+
 -(BOOL)isAvailable
 {
     if([self getURL] == nil)
@@ -49,6 +51,8 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     AppDelegate *appDelegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
     [appDelegate setShowMerged:[NSNumber numberWithBool:showMerged]];
 }
+
+#pragma mark - Queue methods
 
 -(BOOL)deleteQueue:(NSString *)queueId
 {
@@ -135,6 +139,8 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     
     return [[NSArray alloc] initWithArray:tempQueues];
 }
+
+#pragma mark - Story methods
 
 -(NSArray *)getStoriesForQueue:(NSString *)queueId
 {
@@ -317,7 +323,29 @@ NSString *const QUEUE_PENDING_MERGE_COUNT = @"pendingMerge";
     return YES;
 }
 
-//-(BOOL)deleteStory:(NSString *)storyId ForQueue:(NSString *)queueId;
+-(BOOL)deleteStory:(NSString *)storyId ForQueue:(NSString *)queueId
+{
+    NSString *identifier = [NSString stringWithFormat:@"/api/queue/%@/story/%@", queueId, storyId];
+    
+    NSString *url = [[self getURL] stringByAppendingString:identifier];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+                                                           cachePolicy:NSURLRequestReloadIgnoringLocalAndRemoteCacheData
+                                                       timeoutInterval:10];
+    
+    [request setHTTPMethod: @"DELETE"];
+    
+    NSError *requestError;
+    NSHTTPURLResponse *urlResponse = nil;
+    
+    [NSURLConnection sendSynchronousRequest:request returningResponse:&urlResponse error:&requestError];
+    
+    if([urlResponse statusCode] == 204)
+    {
+        return YES;
+    }
+    return NO;
+}
 
 
 

@@ -149,6 +149,7 @@
 		606B2E3716DC148200B75A63 /* iPenguin */ = {
 			isa = PBXGroup;
 			children = (
+				60C939C916FF4981000F41EF /* service */,
 				60C939C616FF45B1000F41EF /* images */,
 				606B2E4016DC148200B75A63 /* AppDelegate.h */,
 				606B2E4116DC148200B75A63 /* AppDelegate.m */,
@@ -163,9 +164,6 @@
 				60B3132716F122F90040BD92 /* StoryDetailsViewController.m */,
 				60E51ACE16F13517008CBE7C /* ConfigViewController.h */,
 				60E51ACF16F13517008CBE7C /* ConfigViewController.m */,
-				600E7FDA16F35AB400E4C93B /* PenguinService.h */,
-				600E7FDB16F38F7900E4C93B /* PenguinServiceImpl.h */,
-				600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */,
 				6090577B16F7C3A000CAB91C /* NewQueueViewController.h */,
 				6090577C16F7C3A000CAB91C /* NewQueueViewController.m */,
 			);
@@ -230,6 +228,16 @@
 				60E51AD516F14121008CBE7C /* penguin114.png */,
 			);
 			name = icon;
+			sourceTree = "<group>";
+		};
+		60C939C916FF4981000F41EF /* service */ = {
+			isa = PBXGroup;
+			children = (
+				600E7FDA16F35AB400E4C93B /* PenguinService.h */,
+				600E7FDB16F38F7900E4C93B /* PenguinServiceImpl.h */,
+				600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */,
+			);
+			name = service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

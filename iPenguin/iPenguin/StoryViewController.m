@@ -20,6 +20,7 @@
 @synthesize queueId;
 
 NSArray *stories;
+NSNumber *deleteStoryIndex;
 NSObject<PenguinService> *service;
 
 UIView *loadingView;
@@ -153,14 +154,71 @@ UILabel *loadingLabel;
     }
 }
 
-/*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
-*/
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (alertView.tag) {
+        case 0:
+            switch (buttonIndex) {
+                case 0:
+                {
+                    NSString *storyId = [[stories objectAtIndex:[deleteStoryIndex integerValue]] objectForKey:STORY_ID];
+                    BOOL deleted = [service deleteStory:storyId ForQueue:queueId];
+                    
+                    if(deleted)
+                    {
+                        stories = [service getStoriesForQueue:queueId];
+                        NSIndexPath *path = [NSIndexPath indexPathForRow:[deleteStoryIndex integerValue] inSection:0];
+                        [self.tableView deleteRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationFade];
+                    }
+                    else
+                    {
+                        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete failed"
+                                                                        message:@"Attempted to delete the story from the server but it failed"
+                                                                       delegate:nil
+                                                              cancelButtonTitle:@"OK"
+                                                              otherButtonTitles:nil];
+                        [alert show];
+                    }
+                }
+                    break;
+            }
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
+// Override to support editing the table view.
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        // Delete the row from the data source
+        deleteStoryIndex = [NSNumber numberWithInteger:indexPath.row];
+        NSString *storyRef = [[stories objectAtIndex:indexPath.row] objectForKey:STORY_REFERENCE];
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Are you sure?"
+                                                        message:[NSString stringWithFormat:@"Are you sure you want to delete %@?  Once it's gone, it's gone!", storyRef]
+                                                       delegate:self
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:@"Cancel", nil];
+        
+        [alert setTag:0];
+        [alert show];
+    }
+    else if (editingStyle == UITableViewCellEditingStyleInsert) {
+        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+    }
+}
+
 
 /*
 // Override to support editing the table view.
