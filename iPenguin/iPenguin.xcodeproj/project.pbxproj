@@ -1,1535 +1,631 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>archiveVersion</key>
-	<string>1</string>
-	<key>classes</key>
-	<dict/>
-	<key>objectVersion</key>
-	<string>46</string>
-	<key>objects</key>
-	<dict>
-		<key>600E7FDA16F35AB400E4C93B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PenguinService.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>600E7FDB16F38F7900E4C93B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>PenguinServiceImpl.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>600E7FDC16F38F7900E4C93B</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>PenguinServiceImpl.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>600E7FDD16F38F7A00E4C93B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>600E7FDC16F38F7900E4C93B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>600E7FDE16F38F7A00E4C93B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>600E7FDC16F38F7900E4C93B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>600E7FDF16F401C100E4C93B</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>QuartzCore.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/QuartzCore.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>600E7FE016F401C100E4C93B</key>
-		<dict>
-			<key>fileRef</key>
-			<string>600E7FDF16F401C100E4C93B</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E2216DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E3716DC148200B75A63</string>
-				<string>606B2E5E16DC148200B75A63</string>
-				<string>606B2E3016DC148200B75A63</string>
-				<string>606B2E2E16DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E2416DC148200B75A63</key>
-		<dict>
-			<key>attributes</key>
-			<dict>
-				<key>LastUpgradeCheck</key>
-				<string>0450</string>
-				<key>ORGANIZATIONNAME</key>
-				<string>Dan Hall</string>
-			</dict>
-			<key>buildConfigurationList</key>
-			<string>606B2E2716DC148200B75A63</string>
-			<key>compatibilityVersion</key>
-			<string>Xcode 3.2</string>
-			<key>developmentRegion</key>
-			<string>English</string>
-			<key>hasScannedForEncodings</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXProject</string>
-			<key>knownRegions</key>
-			<array>
-				<string>en</string>
-			</array>
-			<key>mainGroup</key>
-			<string>606B2E2216DC148200B75A63</string>
-			<key>productRefGroup</key>
-			<string>606B2E2E16DC148200B75A63</string>
-			<key>projectDirPath</key>
-			<string></string>
-			<key>projectReferences</key>
-			<array/>
-			<key>projectRoot</key>
-			<string></string>
-			<key>targets</key>
-			<array>
-				<string>606B2E2C16DC148200B75A63</string>
-				<string>606B2E5616DC148200B75A63</string>
-			</array>
-		</dict>
-		<key>606B2E2716DC148200B75A63</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>606B2E6716DC148200B75A63</string>
-				<string>606B2E6816DC148200B75A63</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>606B2E2916DC148200B75A63</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>606B2E3E16DC148200B75A63</string>
-				<string>606B2E4216DC148200B75A63</string>
-				<string>606B2E7116DC169A00B75A63</string>
-				<string>606B2E7416DC259200B75A63</string>
-				<string>60B3132816F122F90040BD92</string>
-				<string>60E51AD016F13517008CBE7C</string>
-				<string>600E7FDD16F38F7A00E4C93B</string>
-				<string>6090577D16F7C3A000CAB91C</string>
-				<string>60C939D216FF4FC5000F41EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>606B2E2A16DC148200B75A63</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>600E7FE016F401C100E4C93B</string>
-				<string>606B2E3216DC148200B75A63</string>
-				<string>606B2E3416DC148200B75A63</string>
-				<string>606B2E3616DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>606B2E2B16DC148200B75A63</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>606B2E3C16DC148200B75A63</string>
-				<string>606B2E4416DC148200B75A63</string>
-				<string>606B2E4616DC148200B75A63</string>
-				<string>606B2E4816DC148200B75A63</string>
-				<string>606B2E4B16DC148200B75A63</string>
-				<string>606B2E4E16DC148200B75A63</string>
-				<string>60E51AC716F13206008CBE7C</string>
-				<string>60E51ACA16F13257008CBE7C</string>
-				<string>60E51AD616F14121008CBE7C</string>
-				<string>60E51AD816F14152008CBE7C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>606B2E2C16DC148200B75A63</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>606B2E6916DC148200B75A63</string>
-			<key>buildPhases</key>
-			<array>
-				<string>606B2E2916DC148200B75A63</string>
-				<string>606B2E2A16DC148200B75A63</string>
-				<string>606B2E2B16DC148200B75A63</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>iPenguin</string>
-			<key>productName</key>
-			<string>iPenguin</string>
-			<key>productReference</key>
-			<string>606B2E2D16DC148200B75A63</string>
-			<key>productType</key>
-			<string>com.apple.product-type.application</string>
-		</dict>
-		<key>606B2E2D16DC148200B75A63</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.application</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>iPenguin.app</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>606B2E2E16DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E2D16DC148200B75A63</string>
-				<string>606B2E5716DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Products</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3016DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>600E7FDF16F401C100E4C93B</string>
-				<string>606B2E3116DC148200B75A63</string>
-				<string>606B2E3316DC148200B75A63</string>
-				<string>606B2E3516DC148200B75A63</string>
-				<string>606B2E5816DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Frameworks</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3116DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>UIKit.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/UIKit.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>606B2E3216DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E3116DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E3316DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>Foundation.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/Foundation.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>606B2E3416DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E3316DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E3516DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>CoreGraphics.framework</string>
-			<key>path</key>
-			<string>System/Library/Frameworks/CoreGraphics.framework</string>
-			<key>sourceTree</key>
-			<string>SDKROOT</string>
-		</dict>
-		<key>606B2E3616DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E3516DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E3716DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60C939CE16FF4F9C000F41EF</string>
-				<string>60C939CA16FF4F27000F41EF</string>
-				<string>60C939C916FF4981000F41EF</string>
-				<string>60C939C616FF45B1000F41EF</string>
-				<string>606B2E4016DC148200B75A63</string>
-				<string>606B2E4116DC148200B75A63</string>
-				<string>606B2E4916DC148200B75A63</string>
-				<string>606B2E4C16DC148200B75A63</string>
-				<string>606B2E3816DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>iPenguin</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3816DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E3916DC148200B75A63</string>
-				<string>606B2E3A16DC148200B75A63</string>
-				<string>606B2E3D16DC148200B75A63</string>
-				<string>606B2E3F16DC148200B75A63</string>
-				<string>606B2E4316DC148200B75A63</string>
-				<string>606B2E4516DC148200B75A63</string>
-				<string>606B2E4716DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3916DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>iPenguin-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3A16DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E3B16DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3B16DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3C16DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E3A16DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E3D16DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>main.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E3E16DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E3D16DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E3F16DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>iPenguin-Prefix.pch</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4016DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>AppDelegate.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4116DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>AppDelegate.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4216DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E4116DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E4316DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4416DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E4316DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E4516DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4616DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E4516DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E4716DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>Default-568h@2x.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4816DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E4716DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E4916DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E4A16DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>MainStoryboard_iPhone.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4A16DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/MainStoryboard_iPhone.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4B16DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E4916DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E4C16DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E4D16DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>MainStoryboard_iPad.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4D16DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>file.storyboard</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/MainStoryboard_iPad.storyboard</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E4E16DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E4C16DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E5216DC148200B75A63</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>606B2E6616DC148200B75A63</string>
-				<string>600E7FDE16F38F7A00E4C93B</string>
-				<string>6090577E16F7C3A000CAB91C</string>
-				<string>60C939D316FF4FC5000F41EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXSourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>606B2E5316DC148200B75A63</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>606B2E5916DC148200B75A63</string>
-				<string>606B2E5A16DC148200B75A63</string>
-				<string>606B2E5B16DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXFrameworksBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>606B2E5416DC148200B75A63</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array>
-				<string>606B2E6316DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXResourcesBuildPhase</string>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-		</dict>
-		<key>606B2E5516DC148200B75A63</key>
-		<dict>
-			<key>buildActionMask</key>
-			<string>2147483647</string>
-			<key>files</key>
-			<array/>
-			<key>inputPaths</key>
-			<array/>
-			<key>isa</key>
-			<string>PBXShellScriptBuildPhase</string>
-			<key>outputPaths</key>
-			<array/>
-			<key>runOnlyForDeploymentPostprocessing</key>
-			<string>0</string>
-			<key>shellPath</key>
-			<string>/bin/sh</string>
-			<key>shellScript</key>
-			<string># Run the unit tests in this test bundle.
-"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests"
-</string>
-		</dict>
-		<key>606B2E5616DC148200B75A63</key>
-		<dict>
-			<key>buildConfigurationList</key>
-			<string>606B2E6C16DC148200B75A63</string>
-			<key>buildPhases</key>
-			<array>
-				<string>606B2E5216DC148200B75A63</string>
-				<string>606B2E5316DC148200B75A63</string>
-				<string>606B2E5416DC148200B75A63</string>
-				<string>606B2E5516DC148200B75A63</string>
-			</array>
-			<key>buildRules</key>
-			<array/>
-			<key>dependencies</key>
-			<array>
-				<string>606B2E5D16DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXNativeTarget</string>
-			<key>name</key>
-			<string>iPenguinTests</string>
-			<key>productName</key>
-			<string>iPenguinTests</string>
-			<key>productReference</key>
-			<string>606B2E5716DC148200B75A63</string>
-			<key>productType</key>
-			<string>com.apple.product-type.bundle</string>
-		</dict>
-		<key>606B2E5716DC148200B75A63</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.cfbundle</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>iPenguinTests.octest</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>606B2E5816DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>wrapper.framework</string>
-			<key>name</key>
-			<string>SenTestingKit.framework</string>
-			<key>path</key>
-			<string>Library/Frameworks/SenTestingKit.framework</string>
-			<key>sourceTree</key>
-			<string>DEVELOPER_DIR</string>
-		</dict>
-		<key>606B2E5916DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E5816DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E5A16DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E3116DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E5B16DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E3316DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E5C16DC148200B75A63</key>
-		<dict>
-			<key>containerPortal</key>
-			<string>606B2E2416DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXContainerItemProxy</string>
-			<key>proxyType</key>
-			<string>1</string>
-			<key>remoteGlobalIDString</key>
-			<string>606B2E2C16DC148200B75A63</string>
-			<key>remoteInfo</key>
-			<string>iPenguin</string>
-		</dict>
-		<key>606B2E5D16DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXTargetDependency</string>
-			<key>target</key>
-			<string>606B2E2C16DC148200B75A63</string>
-			<key>targetProxy</key>
-			<string>606B2E5C16DC148200B75A63</string>
-		</dict>
-		<key>606B2E5E16DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E6416DC148200B75A63</string>
-				<string>606B2E6516DC148200B75A63</string>
-				<string>606B2E5F16DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>path</key>
-			<string>iPenguinTests</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E5F16DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E6016DC148200B75A63</string>
-				<string>606B2E6116DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Supporting Files</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E6016DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.xml</string>
-			<key>path</key>
-			<string>iPenguinTests-Info.plist</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E6116DC148200B75A63</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E6216DC148200B75A63</string>
-			</array>
-			<key>isa</key>
-			<string>PBXVariantGroup</string>
-			<key>name</key>
-			<string>InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E6216DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>text.plist.strings</string>
-			<key>name</key>
-			<string>en</string>
-			<key>path</key>
-			<string>en.lproj/InfoPlist.strings</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E6316DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E6116DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E6416DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>iPenguinTests.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E6516DC148200B75A63</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>iPenguinTests.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E6616DC148200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E6516DC148200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E6716DC148200B75A63</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>NO</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_DYNAMIC_NO_PIC</key>
-				<string>NO</string>
-				<key>GCC_OPTIMIZATION_LEVEL</key>
-				<string>0</string>
-				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
-				<array>
-					<string>DEBUG=1</string>
-					<string>$(inherited)</string>
-				</array>
-				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
-				<string>NO</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.0</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>606B2E6816DC148200B75A63</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>ALWAYS_SEARCH_USER_PATHS</key>
-				<string>NO</string>
-				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
-				<string>gnu++0x</string>
-				<key>CLANG_CXX_LIBRARY</key>
-				<string>libc++</string>
-				<key>CLANG_ENABLE_OBJC_ARC</key>
-				<string>YES</string>
-				<key>CLANG_WARN_EMPTY_BODY</key>
-				<string>YES</string>
-				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
-				<string>YES</string>
-				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
-				<string>iPhone Developer</string>
-				<key>COPY_PHASE_STRIP</key>
-				<string>YES</string>
-				<key>GCC_C_LANGUAGE_STANDARD</key>
-				<string>gnu99</string>
-				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
-				<string>YES</string>
-				<key>GCC_WARN_UNUSED_VARIABLE</key>
-				<string>YES</string>
-				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
-				<string>6.0</string>
-				<key>OTHER_CFLAGS</key>
-				<string>-DNS_BLOCK_ASSERTIONS=1</string>
-				<key>SDKROOT</key>
-				<string>iphoneos</string>
-				<key>TARGETED_DEVICE_FAMILY</key>
-				<string>1,2</string>
-				<key>VALIDATE_PRODUCT</key>
-				<string>YES</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>606B2E6916DC148200B75A63</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>606B2E6A16DC148200B75A63</string>
-				<string>606B2E6B16DC148200B75A63</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>606B2E6A16DC148200B75A63</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>iPenguin/iPenguin-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>iPenguin/iPenguin-Info.plist</string>
-				<key>LIBRARY_SEARCH_PATHS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(FRANK_LIBRARY_SEARCH_PATHS)</string>
-				</array>
-				<key>OTHER_LDFLAGS</key>
-				<array>
-					<string>$(inherited)</string>
-					<string>$(FRANK_LDFLAGS)</string>
-				</array>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>606B2E6B16DC148200B75A63</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>iPenguin/iPenguin-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>iPenguin/iPenguin-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>app</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>606B2E6C16DC148200B75A63</key>
-		<dict>
-			<key>buildConfigurations</key>
-			<array>
-				<string>606B2E6D16DC148200B75A63</string>
-				<string>606B2E6E16DC148200B75A63</string>
-			</array>
-			<key>defaultConfigurationIsVisible</key>
-			<string>0</string>
-			<key>defaultConfigurationName</key>
-			<string>Release</string>
-			<key>isa</key>
-			<string>XCConfigurationList</string>
-		</dict>
-		<key>606B2E6D16DC148200B75A63</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/iPenguin.app/iPenguin</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>iPenguin/iPenguin-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>iPenguinTests/iPenguinTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Debug</string>
-		</dict>
-		<key>606B2E6E16DC148200B75A63</key>
-		<dict>
-			<key>buildSettings</key>
-			<dict>
-				<key>BUNDLE_LOADER</key>
-				<string>$(BUILT_PRODUCTS_DIR)/iPenguin.app/iPenguin</string>
-				<key>FRAMEWORK_SEARCH_PATHS</key>
-				<array>
-					<string>"$(SDKROOT)/Developer/Library/Frameworks"</string>
-					<string>"$(DEVELOPER_LIBRARY_DIR)/Frameworks"</string>
-				</array>
-				<key>GCC_PRECOMPILE_PREFIX_HEADER</key>
-				<string>YES</string>
-				<key>GCC_PREFIX_HEADER</key>
-				<string>iPenguin/iPenguin-Prefix.pch</string>
-				<key>INFOPLIST_FILE</key>
-				<string>iPenguinTests/iPenguinTests-Info.plist</string>
-				<key>PRODUCT_NAME</key>
-				<string>$(TARGET_NAME)</string>
-				<key>TEST_HOST</key>
-				<string>$(BUNDLE_LOADER)</string>
-				<key>WRAPPER_EXTENSION</key>
-				<string>octest</string>
-			</dict>
-			<key>isa</key>
-			<string>XCBuildConfiguration</string>
-			<key>name</key>
-			<string>Release</string>
-		</dict>
-		<key>606B2E6F16DC169A00B75A63</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>QueueViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E7016DC169A00B75A63</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>QueueViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E7116DC169A00B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E7016DC169A00B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>606B2E7216DC259200B75A63</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>StoryViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E7316DC259200B75A63</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>StoryViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>606B2E7416DC259200B75A63</key>
-		<dict>
-			<key>fileRef</key>
-			<string>606B2E7316DC259200B75A63</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6090577B16F7C3A000CAB91C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>NewQueueViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6090577C16F7C3A000CAB91C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>NewQueueViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>6090577D16F7C3A000CAB91C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6090577C16F7C3A000CAB91C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>6090577E16F7C3A000CAB91C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>6090577C16F7C3A000CAB91C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60B3132616F122F90040BD92</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>StoryDetailsViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60B3132716F122F90040BD92</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>StoryDetailsViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60B3132816F122F90040BD92</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60B3132716F122F90040BD92</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60C939C616FF45B1000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60C939C816FF45C3000F41EF</string>
-				<string>60C939C716FF45BA000F41EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>images</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939C716FF45BA000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60E51AC916F13257008CBE7C</string>
-				<string>60E51AC616F13206008CBE7C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>tab</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939C816FF45C3000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60E51AD716F14152008CBE7C</string>
-				<string>60E51AD516F14121008CBE7C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>icon</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939C916FF4981000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>600E7FDA16F35AB400E4C93B</string>
-				<string>600E7FDB16F38F7900E4C93B</string>
-				<string>600E7FDC16F38F7900E4C93B</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>service</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939CA16FF4F27000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60C939CD16FF4F4F000F41EF</string>
-				<string>60C939CC16FF4F4A000F41EF</string>
-				<string>60C939CB16FF4F42000F41EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>PenguinControllers</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939CB16FF4F42000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E6F16DC169A00B75A63</string>
-				<string>606B2E7016DC169A00B75A63</string>
-				<string>6090577B16F7C3A000CAB91C</string>
-				<string>6090577C16F7C3A000CAB91C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Queues</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939CC16FF4F4A000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>606B2E7216DC259200B75A63</string>
-				<string>606B2E7316DC259200B75A63</string>
-				<string>60B3132616F122F90040BD92</string>
-				<string>60B3132716F122F90040BD92</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Stories</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939CD16FF4F4F000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60E51ACE16F13517008CBE7C</string>
-				<string>60E51ACF16F13517008CBE7C</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Config</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939CE16FF4F9C000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60C939CF16FF4FA2000F41EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Utils</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939CF16FF4FA2000F41EF</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>60C939D016FF4FC5000F41EF</string>
-				<string>60C939D116FF4FC5000F41EF</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Views</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939D016FF4FC5000F41EF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>LoadingIndicator.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939D116FF4FC5000F41EF</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>LoadingIndicator.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60C939D216FF4FC5000F41EF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60C939D116FF4FC5000F41EF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60C939D316FF4FC5000F41EF</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60C939D116FF4FC5000F41EF</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60E51AC616F13206008CBE7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>20-gear2.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60E51AC716F13206008CBE7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60E51AC616F13206008CBE7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60E51AC916F13257008CBE7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>path</key>
-			<string>33-cabinet.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60E51ACA16F13257008CBE7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60E51AC916F13257008CBE7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60E51ACE16F13517008CBE7C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.h</string>
-			<key>path</key>
-			<string>ConfigViewController.h</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60E51ACF16F13517008CBE7C</key>
-		<dict>
-			<key>fileEncoding</key>
-			<string>4</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>sourcecode.c.objc</string>
-			<key>path</key>
-			<string>ConfigViewController.m</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60E51AD016F13517008CBE7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60E51ACF16F13517008CBE7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60E51AD516F14121008CBE7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>name</key>
-			<string>penguin114.png</string>
-			<key>path</key>
-			<string>../penguin114.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60E51AD616F14121008CBE7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60E51AD516F14121008CBE7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-		<key>60E51AD716F14152008CBE7C</key>
-		<dict>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>lastKnownFileType</key>
-			<string>image.png</string>
-			<key>name</key>
-			<string>penguin57.png</string>
-			<key>path</key>
-			<string>../penguin57.png</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
-		</dict>
-		<key>60E51AD816F14152008CBE7C</key>
-		<dict>
-			<key>fileRef</key>
-			<string>60E51AD716F14152008CBE7C</string>
-			<key>isa</key>
-			<string>PBXBuildFile</string>
-		</dict>
-	</dict>
-	<key>rootObject</key>
-	<string>606B2E2416DC148200B75A63</string>
-</dict>
-</plist>
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		600E7FDD16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */; };
+		600E7FDE16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */; };
+		600E7FE016F401C100E4C93B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 600E7FDF16F401C100E4C93B /* QuartzCore.framework */; };
+		606B2E3216DC148200B75A63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3116DC148200B75A63 /* UIKit.framework */; };
+		606B2E3416DC148200B75A63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3316DC148200B75A63 /* Foundation.framework */; };
+		606B2E3616DC148200B75A63 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3516DC148200B75A63 /* CoreGraphics.framework */; };
+		606B2E3C16DC148200B75A63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E3A16DC148200B75A63 /* InfoPlist.strings */; };
+		606B2E3E16DC148200B75A63 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E3D16DC148200B75A63 /* main.m */; };
+		606B2E4216DC148200B75A63 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E4116DC148200B75A63 /* AppDelegate.m */; };
+		606B2E4416DC148200B75A63 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E4316DC148200B75A63 /* Default.png */; };
+		606B2E4616DC148200B75A63 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E4516DC148200B75A63 /* Default@2x.png */; };
+		606B2E4816DC148200B75A63 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E4716DC148200B75A63 /* Default-568h@2x.png */; };
+		606B2E4B16DC148200B75A63 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E4916DC148200B75A63 /* MainStoryboard_iPhone.storyboard */; };
+		606B2E4E16DC148200B75A63 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E4C16DC148200B75A63 /* MainStoryboard_iPad.storyboard */; };
+		606B2E5916DC148200B75A63 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E5816DC148200B75A63 /* SenTestingKit.framework */; };
+		606B2E5A16DC148200B75A63 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3116DC148200B75A63 /* UIKit.framework */; };
+		606B2E5B16DC148200B75A63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606B2E3316DC148200B75A63 /* Foundation.framework */; };
+		606B2E6316DC148200B75A63 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 606B2E6116DC148200B75A63 /* InfoPlist.strings */; };
+		606B2E6616DC148200B75A63 /* iPenguinTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E6516DC148200B75A63 /* iPenguinTests.m */; };
+		606B2E7116DC169A00B75A63 /* QueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7016DC169A00B75A63 /* QueueViewController.m */; };
+		606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 606B2E7316DC259200B75A63 /* StoryViewController.m */; };
+		6090577D16F7C3A000CAB91C /* NewQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090577C16F7C3A000CAB91C /* NewQueueViewController.m */; };
+		6090577E16F7C3A000CAB91C /* NewQueueViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6090577C16F7C3A000CAB91C /* NewQueueViewController.m */; };
+		60B3132816F122F90040BD92 /* StoryDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60B3132716F122F90040BD92 /* StoryDetailsViewController.m */; };
+		60C939D216FF4FC5000F41EF /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C939D116FF4FC5000F41EF /* LoadingIndicator.m */; };
+		60C939D316FF4FC5000F41EF /* LoadingIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 60C939D116FF4FC5000F41EF /* LoadingIndicator.m */; };
+		60E51AC716F13206008CBE7C /* 20-gear2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC616F13206008CBE7C /* 20-gear2.png */; };
+		60E51ACA16F13257008CBE7C /* 33-cabinet.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AC916F13257008CBE7C /* 33-cabinet.png */; };
+		60E51AD016F13517008CBE7C /* ConfigViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E51ACF16F13517008CBE7C /* ConfigViewController.m */; };
+		60E51AD616F14121008CBE7C /* penguin114.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AD516F14121008CBE7C /* penguin114.png */; };
+		60E51AD816F14152008CBE7C /* penguin57.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E51AD716F14152008CBE7C /* penguin57.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		606B2E5C16DC148200B75A63 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 606B2E2416DC148200B75A63 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 606B2E2C16DC148200B75A63;
+			remoteInfo = iPenguin;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		600E7FDA16F35AB400E4C93B /* PenguinService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenguinService.h; sourceTree = "<group>"; };
+		600E7FDB16F38F7900E4C93B /* PenguinServiceImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PenguinServiceImpl.h; sourceTree = "<group>"; };
+		600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PenguinServiceImpl.m; sourceTree = "<group>"; };
+		600E7FDF16F401C100E4C93B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		606B2E2D16DC148200B75A63 /* iPenguin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPenguin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		606B2E3116DC148200B75A63 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		606B2E3316DC148200B75A63 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		606B2E3516DC148200B75A63 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		606B2E3916DC148200B75A63 /* iPenguin-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPenguin-Info.plist"; sourceTree = "<group>"; };
+		606B2E3B16DC148200B75A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		606B2E3D16DC148200B75A63 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		606B2E3F16DC148200B75A63 /* iPenguin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iPenguin-Prefix.pch"; sourceTree = "<group>"; };
+		606B2E4016DC148200B75A63 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		606B2E4116DC148200B75A63 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		606B2E4316DC148200B75A63 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		606B2E4516DC148200B75A63 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		606B2E4716DC148200B75A63 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		606B2E4A16DC148200B75A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
+		606B2E4D16DC148200B75A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
+		606B2E5716DC148200B75A63 /* iPenguinTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPenguinTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		606B2E5816DC148200B75A63 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		606B2E6016DC148200B75A63 /* iPenguinTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iPenguinTests-Info.plist"; sourceTree = "<group>"; };
+		606B2E6216DC148200B75A63 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		606B2E6416DC148200B75A63 /* iPenguinTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iPenguinTests.h; sourceTree = "<group>"; };
+		606B2E6516DC148200B75A63 /* iPenguinTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPenguinTests.m; sourceTree = "<group>"; };
+		606B2E6F16DC169A00B75A63 /* QueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QueueViewController.h; sourceTree = "<group>"; };
+		606B2E7016DC169A00B75A63 /* QueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QueueViewController.m; sourceTree = "<group>"; };
+		606B2E7216DC259200B75A63 /* StoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryViewController.h; sourceTree = "<group>"; };
+		606B2E7316DC259200B75A63 /* StoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryViewController.m; sourceTree = "<group>"; };
+		6090577B16F7C3A000CAB91C /* NewQueueViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewQueueViewController.h; sourceTree = "<group>"; };
+		6090577C16F7C3A000CAB91C /* NewQueueViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewQueueViewController.m; sourceTree = "<group>"; };
+		60B3132616F122F90040BD92 /* StoryDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoryDetailsViewController.h; sourceTree = "<group>"; };
+		60B3132716F122F90040BD92 /* StoryDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoryDetailsViewController.m; sourceTree = "<group>"; };
+		60C939D016FF4FC5000F41EF /* LoadingIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingIndicator.h; sourceTree = "<group>"; };
+		60C939D116FF4FC5000F41EF /* LoadingIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingIndicator.m; sourceTree = "<group>"; };
+		60E51AC616F13206008CBE7C /* 20-gear2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "20-gear2.png"; sourceTree = "<group>"; };
+		60E51AC916F13257008CBE7C /* 33-cabinet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "33-cabinet.png"; sourceTree = "<group>"; };
+		60E51ACE16F13517008CBE7C /* ConfigViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConfigViewController.h; sourceTree = "<group>"; };
+		60E51ACF16F13517008CBE7C /* ConfigViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConfigViewController.m; sourceTree = "<group>"; };
+		60E51AD516F14121008CBE7C /* penguin114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = penguin114.png; path = ../penguin114.png; sourceTree = "<group>"; };
+		60E51AD716F14152008CBE7C /* penguin57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = penguin57.png; path = ../penguin57.png; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		606B2E2A16DC148200B75A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				600E7FE016F401C100E4C93B /* QuartzCore.framework in Frameworks */,
+				606B2E3216DC148200B75A63 /* UIKit.framework in Frameworks */,
+				606B2E3416DC148200B75A63 /* Foundation.framework in Frameworks */,
+				606B2E3616DC148200B75A63 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		606B2E5316DC148200B75A63 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				606B2E5916DC148200B75A63 /* SenTestingKit.framework in Frameworks */,
+				606B2E5A16DC148200B75A63 /* UIKit.framework in Frameworks */,
+				606B2E5B16DC148200B75A63 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		606B2E2216DC148200B75A63 = {
+			isa = PBXGroup;
+			children = (
+				606B2E3716DC148200B75A63 /* iPenguin */,
+				606B2E5E16DC148200B75A63 /* iPenguinTests */,
+				606B2E3016DC148200B75A63 /* Frameworks */,
+				606B2E2E16DC148200B75A63 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		606B2E2E16DC148200B75A63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E2D16DC148200B75A63 /* iPenguin.app */,
+				606B2E5716DC148200B75A63 /* iPenguinTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		606B2E3016DC148200B75A63 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				600E7FDF16F401C100E4C93B /* QuartzCore.framework */,
+				606B2E3116DC148200B75A63 /* UIKit.framework */,
+				606B2E3316DC148200B75A63 /* Foundation.framework */,
+				606B2E3516DC148200B75A63 /* CoreGraphics.framework */,
+				606B2E5816DC148200B75A63 /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		606B2E3716DC148200B75A63 /* iPenguin */ = {
+			isa = PBXGroup;
+			children = (
+				60C939CE16FF4F9C000F41EF /* Utils */,
+				60C939CA16FF4F27000F41EF /* PenguinControllers */,
+				60C939C916FF4981000F41EF /* service */,
+				60C939C616FF45B1000F41EF /* images */,
+				606B2E4016DC148200B75A63 /* AppDelegate.h */,
+				606B2E4116DC148200B75A63 /* AppDelegate.m */,
+				606B2E4916DC148200B75A63 /* MainStoryboard_iPhone.storyboard */,
+				606B2E4C16DC148200B75A63 /* MainStoryboard_iPad.storyboard */,
+				606B2E3816DC148200B75A63 /* Supporting Files */,
+			);
+			path = iPenguin;
+			sourceTree = "<group>";
+		};
+		606B2E3816DC148200B75A63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E3916DC148200B75A63 /* iPenguin-Info.plist */,
+				606B2E3A16DC148200B75A63 /* InfoPlist.strings */,
+				606B2E3D16DC148200B75A63 /* main.m */,
+				606B2E3F16DC148200B75A63 /* iPenguin-Prefix.pch */,
+				606B2E4316DC148200B75A63 /* Default.png */,
+				606B2E4516DC148200B75A63 /* Default@2x.png */,
+				606B2E4716DC148200B75A63 /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		606B2E5E16DC148200B75A63 /* iPenguinTests */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E6416DC148200B75A63 /* iPenguinTests.h */,
+				606B2E6516DC148200B75A63 /* iPenguinTests.m */,
+				606B2E5F16DC148200B75A63 /* Supporting Files */,
+			);
+			path = iPenguinTests;
+			sourceTree = "<group>";
+		};
+		606B2E5F16DC148200B75A63 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E6016DC148200B75A63 /* iPenguinTests-Info.plist */,
+				606B2E6116DC148200B75A63 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		60C939C616FF45B1000F41EF /* images */ = {
+			isa = PBXGroup;
+			children = (
+				60C939C816FF45C3000F41EF /* icon */,
+				60C939C716FF45BA000F41EF /* tab */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
+		60C939C716FF45BA000F41EF /* tab */ = {
+			isa = PBXGroup;
+			children = (
+				60E51AC916F13257008CBE7C /* 33-cabinet.png */,
+				60E51AC616F13206008CBE7C /* 20-gear2.png */,
+			);
+			name = tab;
+			sourceTree = "<group>";
+		};
+		60C939C816FF45C3000F41EF /* icon */ = {
+			isa = PBXGroup;
+			children = (
+				60E51AD716F14152008CBE7C /* penguin57.png */,
+				60E51AD516F14121008CBE7C /* penguin114.png */,
+			);
+			name = icon;
+			sourceTree = "<group>";
+		};
+		60C939C916FF4981000F41EF /* service */ = {
+			isa = PBXGroup;
+			children = (
+				600E7FDA16F35AB400E4C93B /* PenguinService.h */,
+				600E7FDB16F38F7900E4C93B /* PenguinServiceImpl.h */,
+				600E7FDC16F38F7900E4C93B /* PenguinServiceImpl.m */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
+		60C939CA16FF4F27000F41EF /* PenguinControllers */ = {
+			isa = PBXGroup;
+			children = (
+				60C939CD16FF4F4F000F41EF /* Config */,
+				60C939CC16FF4F4A000F41EF /* Stories */,
+				60C939CB16FF4F42000F41EF /* Queues */,
+			);
+			name = PenguinControllers;
+			sourceTree = "<group>";
+		};
+		60C939CB16FF4F42000F41EF /* Queues */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E6F16DC169A00B75A63 /* QueueViewController.h */,
+				606B2E7016DC169A00B75A63 /* QueueViewController.m */,
+				6090577B16F7C3A000CAB91C /* NewQueueViewController.h */,
+				6090577C16F7C3A000CAB91C /* NewQueueViewController.m */,
+			);
+			name = Queues;
+			sourceTree = "<group>";
+		};
+		60C939CC16FF4F4A000F41EF /* Stories */ = {
+			isa = PBXGroup;
+			children = (
+				606B2E7216DC259200B75A63 /* StoryViewController.h */,
+				606B2E7316DC259200B75A63 /* StoryViewController.m */,
+				60B3132616F122F90040BD92 /* StoryDetailsViewController.h */,
+				60B3132716F122F90040BD92 /* StoryDetailsViewController.m */,
+			);
+			name = Stories;
+			sourceTree = "<group>";
+		};
+		60C939CD16FF4F4F000F41EF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				60E51ACE16F13517008CBE7C /* ConfigViewController.h */,
+				60E51ACF16F13517008CBE7C /* ConfigViewController.m */,
+			);
+			name = Config;
+			sourceTree = "<group>";
+		};
+		60C939CE16FF4F9C000F41EF /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				60C939CF16FF4FA2000F41EF /* Views */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		60C939CF16FF4FA2000F41EF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				60C939D016FF4FC5000F41EF /* LoadingIndicator.h */,
+				60C939D116FF4FC5000F41EF /* LoadingIndicator.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		606B2E2C16DC148200B75A63 /* iPenguin */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 606B2E6916DC148200B75A63 /* Build configuration list for PBXNativeTarget "iPenguin" */;
+			buildPhases = (
+				606B2E2916DC148200B75A63 /* Sources */,
+				606B2E2A16DC148200B75A63 /* Frameworks */,
+				606B2E2B16DC148200B75A63 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iPenguin;
+			productName = iPenguin;
+			productReference = 606B2E2D16DC148200B75A63 /* iPenguin.app */;
+			productType = "com.apple.product-type.application";
+		};
+		606B2E5616DC148200B75A63 /* iPenguinTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 606B2E6C16DC148200B75A63 /* Build configuration list for PBXNativeTarget "iPenguinTests" */;
+			buildPhases = (
+				606B2E5216DC148200B75A63 /* Sources */,
+				606B2E5316DC148200B75A63 /* Frameworks */,
+				606B2E5416DC148200B75A63 /* Resources */,
+				606B2E5516DC148200B75A63 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				606B2E5D16DC148200B75A63 /* PBXTargetDependency */,
+			);
+			name = iPenguinTests;
+			productName = iPenguinTests;
+			productReference = 606B2E5716DC148200B75A63 /* iPenguinTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		606B2E2416DC148200B75A63 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Dan Hall";
+			};
+			buildConfigurationList = 606B2E2716DC148200B75A63 /* Build configuration list for PBXProject "iPenguin" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 606B2E2216DC148200B75A63;
+			productRefGroup = 606B2E2E16DC148200B75A63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				606B2E2C16DC148200B75A63 /* iPenguin */,
+				606B2E5616DC148200B75A63 /* iPenguinTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		606B2E2B16DC148200B75A63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				606B2E3C16DC148200B75A63 /* InfoPlist.strings in Resources */,
+				606B2E4416DC148200B75A63 /* Default.png in Resources */,
+				606B2E4616DC148200B75A63 /* Default@2x.png in Resources */,
+				606B2E4816DC148200B75A63 /* Default-568h@2x.png in Resources */,
+				606B2E4B16DC148200B75A63 /* MainStoryboard_iPhone.storyboard in Resources */,
+				606B2E4E16DC148200B75A63 /* MainStoryboard_iPad.storyboard in Resources */,
+				60E51AC716F13206008CBE7C /* 20-gear2.png in Resources */,
+				60E51ACA16F13257008CBE7C /* 33-cabinet.png in Resources */,
+				60E51AD616F14121008CBE7C /* penguin114.png in Resources */,
+				60E51AD816F14152008CBE7C /* penguin57.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		606B2E5416DC148200B75A63 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				606B2E6316DC148200B75A63 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		606B2E5516DC148200B75A63 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		606B2E2916DC148200B75A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				606B2E3E16DC148200B75A63 /* main.m in Sources */,
+				606B2E4216DC148200B75A63 /* AppDelegate.m in Sources */,
+				606B2E7116DC169A00B75A63 /* QueueViewController.m in Sources */,
+				606B2E7416DC259200B75A63 /* StoryViewController.m in Sources */,
+				60B3132816F122F90040BD92 /* StoryDetailsViewController.m in Sources */,
+				60E51AD016F13517008CBE7C /* ConfigViewController.m in Sources */,
+				600E7FDD16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */,
+				6090577D16F7C3A000CAB91C /* NewQueueViewController.m in Sources */,
+				60C939D216FF4FC5000F41EF /* LoadingIndicator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		606B2E5216DC148200B75A63 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				606B2E6616DC148200B75A63 /* iPenguinTests.m in Sources */,
+				600E7FDE16F38F7A00E4C93B /* PenguinServiceImpl.m in Sources */,
+				6090577E16F7C3A000CAB91C /* NewQueueViewController.m in Sources */,
+				60C939D316FF4FC5000F41EF /* LoadingIndicator.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		606B2E5D16DC148200B75A63 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 606B2E2C16DC148200B75A63 /* iPenguin */;
+			targetProxy = 606B2E5C16DC148200B75A63 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		606B2E3A16DC148200B75A63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				606B2E3B16DC148200B75A63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		606B2E4916DC148200B75A63 /* MainStoryboard_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				606B2E4A16DC148200B75A63 /* en */,
+			);
+			name = MainStoryboard_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		606B2E4C16DC148200B75A63 /* MainStoryboard_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				606B2E4D16DC148200B75A63 /* en */,
+			);
+			name = MainStoryboard_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		606B2E6116DC148200B75A63 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				606B2E6216DC148200B75A63 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		606B2E6716DC148200B75A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		606B2E6816DC148200B75A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		606B2E6A16DC148200B75A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPenguin/iPenguin-Prefix.pch";
+				INFOPLIST_FILE = "iPenguin/iPenguin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(FRANK_LIBRARY_SEARCH_PATHS)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"$(FRANK_LDFLAGS)",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		606B2E6B16DC148200B75A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPenguin/iPenguin-Prefix.pch";
+				INFOPLIST_FILE = "iPenguin/iPenguin-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		606B2E6D16DC148200B75A63 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iPenguin.app/iPenguin";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPenguin/iPenguin-Prefix.pch";
+				INFOPLIST_FILE = "iPenguinTests/iPenguinTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		606B2E6E16DC148200B75A63 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/iPenguin.app/iPenguin";
+				FRAMEWORK_SEARCH_PATHS = (
+					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
+					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "iPenguin/iPenguin-Prefix.pch";
+				INFOPLIST_FILE = "iPenguinTests/iPenguinTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		606B2E2716DC148200B75A63 /* Build configuration list for PBXProject "iPenguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				606B2E6716DC148200B75A63 /* Debug */,
+				606B2E6816DC148200B75A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		606B2E6916DC148200B75A63 /* Build configuration list for PBXNativeTarget "iPenguin" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				606B2E6A16DC148200B75A63 /* Debug */,
+				606B2E6B16DC148200B75A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		606B2E6C16DC148200B75A63 /* Build configuration list for PBXNativeTarget "iPenguinTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				606B2E6D16DC148200B75A63 /* Debug */,
+				606B2E6E16DC148200B75A63 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 606B2E2416DC148200B75A63 /* Project object */;
+}
